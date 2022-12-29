@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Deportivo.Web.Data.Entities.Horario>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.hordep_desc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hordep_fecing)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hordep_fecsal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hordep_obse)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.hordep_desc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hordep_fecing)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hordep_fecsal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hordep_obse)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id_hordep">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id_hordep">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id_hordep">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

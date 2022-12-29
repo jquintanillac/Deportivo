@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Deportivo.Web.Data.Entities.Cliente>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.client_desc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.client_dociden)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.client_tipdoc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.client_obser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.client_telf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.client_email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.client_act)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.client_desc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.client_dociden)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.client_tipdoc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.client_obser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.client_telf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.client_email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.client_act)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id_client">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id_client">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id_client">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

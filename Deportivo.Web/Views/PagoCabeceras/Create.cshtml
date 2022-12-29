@@ -1,0 +1,65 @@
+﻿@model Deportivo.Web.Data.Entities.PagoCabecera
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>PagoCabecera</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="pagcab_descr" class="control-label"></label>
+                <input asp-for="pagcab_descr" class="form-control" />
+                <span asp-validation-for="pagcab_descr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pagcab_feccrea" class="control-label"></label>
+                <input asp-for="pagcab_feccrea" class="form-control" />
+                <span asp-validation-for="pagcab_feccrea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pagcab_fecemis" class="control-label"></label>
+                <input asp-for="pagcab_fecemis" class="form-control" />
+                <span asp-validation-for="pagcab_fecemis" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pagcab_nro" class="control-label"></label>
+                <input asp-for="pagcab_nro" class="form-control" />
+                <span asp-validation-for="pagcab_nro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pagcab_obs" class="control-label"></label>
+                <input asp-for="pagcab_obs" class="form-control" />
+                <span asp-validation-for="pagcab_obs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pagcab_total" class="control-label"></label>
+                <input asp-for="pagcab_total" class="form-control" />
+                <span asp-validation-for="pagcab_total" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pagcab_est" class="control-label"></label>
+                <input asp-for="pagcab_est" class="form-control" />
+                <span asp-validation-for="pagcab_est" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

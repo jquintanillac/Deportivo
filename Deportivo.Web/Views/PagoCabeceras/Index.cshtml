@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Deportivo.Web.Data.Entities.PagoCabecera>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.pagcab_descr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pagcab_feccrea)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pagcab_fecemis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pagcab_nro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pagcab_obs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pagcab_total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pagcab_est)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.pagcab_descr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pagcab_feccrea)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pagcab_fecemis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pagcab_nro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pagcab_obs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pagcab_total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pagcab_est)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id_pagcab">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id_pagcab">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id_pagcab">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
