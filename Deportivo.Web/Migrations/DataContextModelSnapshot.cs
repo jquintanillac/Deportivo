@@ -30,9 +30,6 @@ namespace Deportivo.Web.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id_acce"));
 
-                    b.Property<int?>("DeportivoAccesorioid_depacce")
-                        .HasColumnType("int");
-
                     b.Property<bool>("acce_act")
                         .HasColumnType("bit");
 
@@ -46,8 +43,6 @@ namespace Deportivo.Web.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id_acce");
-
-                    b.HasIndex("DeportivoAccesorioid_depacce");
 
                     b.HasIndex("id_acce")
                         .IsUnique();
@@ -63,9 +58,6 @@ namespace Deportivo.Web.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id_adicio"));
 
-                    b.Property<int?>("PagoDetalleid_pagdet")
-                        .HasColumnType("int");
-
                     b.Property<string>("adicio_desc")
                         .HasColumnType("nvarchar(max)");
 
@@ -73,8 +65,6 @@ namespace Deportivo.Web.Migrations
                         .HasColumnType("bit");
 
                     b.HasKey("id_adicio");
-
-                    b.HasIndex("PagoDetalleid_pagdet");
 
                     b.HasIndex("id_adicio")
                         .IsUnique();
@@ -90,10 +80,7 @@ namespace Deportivo.Web.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id_client"));
 
-                    b.Property<int?>("Horarioid_hordep")
-                        .HasColumnType("int");
-
-                    b.Property<bool?>("client_act")
+                    b.Property<bool>("client_act")
                         .HasColumnType("bit");
 
                     b.Property<string>("client_desc")
@@ -114,9 +101,10 @@ namespace Deportivo.Web.Migrations
                     b.Property<string>("client_tipdoc")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("id_client");
+                    b.Property<int>("id_tipdoc")
+                        .HasColumnType("int");
 
-                    b.HasIndex("Horarioid_hordep");
+                    b.HasKey("id_client");
 
                     b.HasIndex("id_client")
                         .IsUnique();
@@ -138,6 +126,12 @@ namespace Deportivo.Web.Migrations
                     b.Property<DateTime>("depacce_fecingr")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("id_acce")
+                        .HasColumnType("int");
+
+                    b.Property<int>("id_espdep")
+                        .HasColumnType("int");
+
                     b.HasKey("id_depacce");
 
                     b.HasIndex("id_depacce")
@@ -154,12 +148,6 @@ namespace Deportivo.Web.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id_espdep"));
 
-                    b.Property<int?>("DeportivoAccesorioid_depacce")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Horarioid_hordep")
-                        .HasColumnType("int");
-
                     b.Property<bool>("espdep_act")
                         .HasColumnType("bit");
 
@@ -169,14 +157,10 @@ namespace Deportivo.Web.Migrations
                     b.Property<DateTime>("espdep_fecha")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("id_tipdep")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("id_tipdep")
+                        .HasColumnType("int");
 
                     b.HasKey("id_espdep");
-
-                    b.HasIndex("DeportivoAccesorioid_depacce");
-
-                    b.HasIndex("Horarioid_hordep");
 
                     b.HasIndex("id_espdep")
                         .IsUnique();
@@ -192,9 +176,6 @@ namespace Deportivo.Web.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id_hordep"));
 
-                    b.Property<int?>("PagoDetalleid_pagdet")
-                        .HasColumnType("int");
-
                     b.Property<string>("hordep_desc")
                         .HasColumnType("nvarchar(max)");
 
@@ -207,9 +188,13 @@ namespace Deportivo.Web.Migrations
                     b.Property<string>("hordep_obse")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("id_hordep");
+                    b.Property<int>("id_clien")
+                        .HasColumnType("int");
 
-                    b.HasIndex("PagoDetalleid_pagdet");
+                    b.Property<int>("id_espdep")
+                        .HasColumnType("int");
+
+                    b.HasKey("id_hordep");
 
                     b.HasIndex("id_hordep")
                         .IsUnique();
@@ -224,6 +209,9 @@ namespace Deportivo.Web.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id_pagcab"));
+
+                    b.Property<int>("id_tipodoc")
+                        .HasColumnType("int");
 
                     b.Property<string>("pagcab_descr")
                         .HasColumnType("nvarchar(max)");
@@ -262,7 +250,13 @@ namespace Deportivo.Web.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id_pagdet"));
 
-                    b.Property<int?>("PagoCabeceraid_pagcab")
+                    b.Property<int>("id_adicio")
+                        .HasColumnType("int");
+
+                    b.Property<int>("id_hordep")
+                        .HasColumnType("int");
+
+                    b.Property<int>("id_pagcab")
                         .HasColumnType("int");
 
                     b.Property<decimal>("pagdet_monto")
@@ -272,8 +266,6 @@ namespace Deportivo.Web.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("id_pagdet");
-
-                    b.HasIndex("PagoCabeceraid_pagcab");
 
                     b.HasIndex("id_pagdet")
                         .IsUnique();
@@ -289,9 +281,6 @@ namespace Deportivo.Web.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id_tipdep"));
 
-                    b.Property<int?>("EspacioDeportivoid_espdep")
-                        .HasColumnType("int");
-
                     b.Property<bool>("tipdep_act")
                         .HasColumnType("bit");
 
@@ -299,8 +288,6 @@ namespace Deportivo.Web.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id_tipdep");
-
-                    b.HasIndex("EspacioDeportivoid_espdep");
 
                     b.HasIndex("id_tipdep")
                         .IsUnique();
@@ -316,9 +303,6 @@ namespace Deportivo.Web.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id_tipdoc"));
 
-                    b.Property<int?>("PagoCabeceraid_pagcab")
-                        .HasColumnType("int");
-
                     b.Property<bool>("tipdoc_act")
                         .HasColumnType("bit");
 
@@ -327,123 +311,10 @@ namespace Deportivo.Web.Migrations
 
                     b.HasKey("id_tipdoc");
 
-                    b.HasIndex("PagoCabeceraid_pagcab");
-
                     b.HasIndex("id_tipdoc")
                         .IsUnique();
 
                     b.ToTable("Tipo_Documento");
-                });
-
-            modelBuilder.Entity("Deportivo.Web.Data.Entities.Accesorios", b =>
-                {
-                    b.HasOne("Deportivo.Web.Data.Entities.DeportivoAccesorio", "DeportivoAccesorio")
-                        .WithMany("Accesorios")
-                        .HasForeignKey("DeportivoAccesorioid_depacce");
-
-                    b.Navigation("DeportivoAccesorio");
-                });
-
-            modelBuilder.Entity("Deportivo.Web.Data.Entities.Adicionales", b =>
-                {
-                    b.HasOne("Deportivo.Web.Data.Entities.PagoDetalle", "PagoDetalle")
-                        .WithMany("Adicionales")
-                        .HasForeignKey("PagoDetalleid_pagdet");
-
-                    b.Navigation("PagoDetalle");
-                });
-
-            modelBuilder.Entity("Deportivo.Web.Data.Entities.Cliente", b =>
-                {
-                    b.HasOne("Deportivo.Web.Data.Entities.Horario", "Horario")
-                        .WithMany("Clientes")
-                        .HasForeignKey("Horarioid_hordep");
-
-                    b.Navigation("Horario");
-                });
-
-            modelBuilder.Entity("Deportivo.Web.Data.Entities.EspacioDeportivo", b =>
-                {
-                    b.HasOne("Deportivo.Web.Data.Entities.DeportivoAccesorio", "DeportivoAccesorio")
-                        .WithMany("EspacioDeportivos")
-                        .HasForeignKey("DeportivoAccesorioid_depacce");
-
-                    b.HasOne("Deportivo.Web.Data.Entities.Horario", "Horario")
-                        .WithMany("EspacioDeportivos")
-                        .HasForeignKey("Horarioid_hordep");
-
-                    b.Navigation("DeportivoAccesorio");
-
-                    b.Navigation("Horario");
-                });
-
-            modelBuilder.Entity("Deportivo.Web.Data.Entities.Horario", b =>
-                {
-                    b.HasOne("Deportivo.Web.Data.Entities.PagoDetalle", "PagoDetalle")
-                        .WithMany("Horarios")
-                        .HasForeignKey("PagoDetalleid_pagdet");
-
-                    b.Navigation("PagoDetalle");
-                });
-
-            modelBuilder.Entity("Deportivo.Web.Data.Entities.PagoDetalle", b =>
-                {
-                    b.HasOne("Deportivo.Web.Data.Entities.PagoCabecera", "PagoCabecera")
-                        .WithMany("PagoDetalle")
-                        .HasForeignKey("PagoCabeceraid_pagcab");
-
-                    b.Navigation("PagoCabecera");
-                });
-
-            modelBuilder.Entity("Deportivo.Web.Data.Entities.TipoDeportivo", b =>
-                {
-                    b.HasOne("Deportivo.Web.Data.Entities.EspacioDeportivo", "EspacioDeportivo")
-                        .WithMany("TipoDeportivos")
-                        .HasForeignKey("EspacioDeportivoid_espdep");
-
-                    b.Navigation("EspacioDeportivo");
-                });
-
-            modelBuilder.Entity("Deportivo.Web.Data.Entities.TipoDocumento", b =>
-                {
-                    b.HasOne("Deportivo.Web.Data.Entities.PagoCabecera", "PagoCabecera")
-                        .WithMany("TipoDocumentos")
-                        .HasForeignKey("PagoCabeceraid_pagcab");
-
-                    b.Navigation("PagoCabecera");
-                });
-
-            modelBuilder.Entity("Deportivo.Web.Data.Entities.DeportivoAccesorio", b =>
-                {
-                    b.Navigation("Accesorios");
-
-                    b.Navigation("EspacioDeportivos");
-                });
-
-            modelBuilder.Entity("Deportivo.Web.Data.Entities.EspacioDeportivo", b =>
-                {
-                    b.Navigation("TipoDeportivos");
-                });
-
-            modelBuilder.Entity("Deportivo.Web.Data.Entities.Horario", b =>
-                {
-                    b.Navigation("Clientes");
-
-                    b.Navigation("EspacioDeportivos");
-                });
-
-            modelBuilder.Entity("Deportivo.Web.Data.Entities.PagoCabecera", b =>
-                {
-                    b.Navigation("PagoDetalle");
-
-                    b.Navigation("TipoDocumentos");
-                });
-
-            modelBuilder.Entity("Deportivo.Web.Data.Entities.PagoDetalle", b =>
-                {
-                    b.Navigation("Adicionales");
-
-                    b.Navigation("Horarios");
                 });
 #pragma warning restore 612, 618
         }

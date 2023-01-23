@@ -10,6 +10,6 @@ namespace Deportivo.Web.Data.Entities
         public int id_adicio { get; set; }
         public string? adicio_desc { get; set; }
         public bool adicio_est { get; set; }
-        public PagoDetalle? PagoDetalle { get; set; }
+        
     }
 }

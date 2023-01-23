@@ -1,42 +1,144 @@
-﻿@model IEnumerable<Deportivo.Web.Data.Entities.TipoDocumento>
-
-@{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@{
+	ViewData["Title"] = "Tipo documento";
 }
 
-<h1>Index</h1>
+<div class="card card-info">
+	<div class="card-header">
+		<h3 class="text-center">TIPOS DE DOCUMENTOS</h3>
+	</div>
+	<div class="card-body">
+		<div class="row">
+			<div class="col">
+				<input type="hidden" id="id_tipdoc" value="" />
+				<label>Descripcion:</label>
+				<input type="text" class="form-control" placeholder="Descripcion" id="tipdoc_desc" name="tipdoc_desc">
+			</div>	
+		</div>
+		<br />
+		<div class="form-check">
+			<input type="checkbox" class="form-check-input" id="tipdoc_act">
+			<label class="form-check-label" for="exampleCheck1">Activo?</label>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-md-6">
+				<button id="btnsave" class="btn btn-success btn-sm">Guardar</button>
+				<button id="btnAddnew" class="btn btn-primary btn-sm">Limpiar Datos</button>
+			</div>
+		</div>
+		<br />
+		<table id="tbltipdoc" class="table table-striped table-bordered" style="width: 100%">
+			<thead>
+				<tr>
+					<th class="d-none">id_tipdoc</th>
+					<th>Descripcion</th>
+					<th>Activo</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+</div>
+@section Scripts {
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#tbltipdoc').DataTable({
+				"ajax": {
+					"url": "/api/ATipodocumentario",
+					"dataSrc": ""
+				},
+				"pageLength": 15,
+				"language": {
+					"lengthMenu": "Mostrar _MENU_ registros por pagina",
+					"zeroRecords": "No se encontraron registros",
+					"info": "Mostrar pagina _PAGE_ de _PAGES_",
+					"infoEmpty": "No se encontraron registros",
+					"infoFiltered": "(filtrado de _MAX_ registros totales)",
+					"search": "Buscar:",
+					"paginate": {
+						"next": "siguiente",
+						"previous": "Anterior"
+					}
+				},
+				"scrollX": true,
+				"responsive": true,
+				"columns": [
+					{ data: 'id_tipdoc', "visible": false },
+					{ data: 'tipdoc_desc' },
+					{
+						data: 'tipdoc_act',
+						"render": function (data, type, row) {
+							if (row.tipdoc_act === true) { return 'Activo'; }
+							else { return 'Inactivo'; }
+						}
+					},
+					{
+						data: "id", render: function (data, type, row, meta) {
+							return "<button class='btn btn-success btn-sm' onclick='Edit(" + JSON.stringify(row) + ")'>Editar</button>" +
+								"<button class='btn btn-danger btn-sm'  onclick='Delete(" + JSON.stringify(row) + ")'>Eliminar</button>";
+						}
+					}
+				]
+			});
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.tipdoc_desc)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.tipdoc_act)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.tipdoc_desc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.tipdoc_act)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.id_tipdoc">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id_tipdoc">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id_tipdoc">Delete</a>
-            </td>
-        </tr>
+			$("#btnsave").click(function () {
+
+				var id_tipdoc = $("#id_tipdoc").val();
+				var tipdoc_desc = $("#tipdoc_desc").val();
+				var tipdoc_act = $("#tipdoc_act").val();
+				if (tipdoc_desc === '') {
+					swal('Mensaje de advertencia', 'Complete los campos requeridos', 'error');
+				}
+				else {
+					var oTipdoc = {
+						id_tipdoc: $.trim($("#id_tipdoc").val()) == "" ? 0 : $("#id_tipdoc").val(),
+						tipdoc_desc: $("#tipdoc_desc").val(),
+						tipdoc_act: $("#tipdoc_act").prop("checked") ? true : false
+					};
+
+					$.post("api/ATipodocumentario", { oTipdoc: oTipdoc })
+						.done(function (data) {
+							Reset();
+							ReloadGrid();
+							swal('Mensaje de confirmacion', 'Registro Grabado', 'success');
+						});
+				}
+
+			});
+
+			$("#btnAddnew").click(function () {
+				Reset();
+			});
+		});
+
+		function Edit(oTipdoc) {
+			$("#id_tipdoc").val(oTipdoc.id_tipdoc);
+			$("#tipdoc_desc").val(oTipdoc.tipdoc_desc);
+			$("#tipdoc_act").val(oTipdoc.tipdoc_act);
+		}
+
+		function Delete(oTipdoc) {
+			var id = oTipdoc.id_tipdoc;
+			$.ajax({
+				url: "api/ATipodocumentario/" + id,
+				type: "DELETE",
+				success: function (result) {
+					swal('Mensaje de confirmacion', 'Registro eliminado', 'success');
+					ReloadGrid();
+				}
+			});
+		}
+
+		function Reset() {
+			$("#id_tipdoc").val(0);
+			$("#tipdoc_desc").val("");
+			$("#tipdoc_act").val("");
+		}
+		function ReloadGrid() {
+			$("#tbltipdoc").DataTable().clear();
+			$("#tbltipdoc").DataTable().ajax.reload();
+		}
+
+	</script>
 }
-    </tbody>
-</table>

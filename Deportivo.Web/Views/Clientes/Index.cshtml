@@ -1,72 +1,209 @@
-﻿@model IEnumerable<Deportivo.Web.Data.Entities.Cliente>
-
-@{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@{
+	ViewData["Title"] = "Clientes";
 }
 
-<h1>Index</h1>
+<div class="card card-info">
+	<div class="card-header">
+		<h3 class="text-center">CLIENTES</h3>
+	</div>
+	<div class="card-body">
+		<div class="row">
+			<div class="col">
+				<input type="hidden" id="id_client" value="" />
+				<label>Descripcion:</label>
+				<input type="text" class="form-control" placeholder="Descripcion" id="client_desc" name="client_desc">
+			</div>
+			<div class="col">
+				<label>Telefono:</label>
+				<input type="text" class="form-control" placeholder="Telefono" id="client_telf" name="client_telf">
+			</div>		
+		</div>
+		<br />
+		<div class="row">
+			<div class="col">
+				<label>Tipo Documento:</label>
+				<select class="form-control" id="id_tipdoc" asp-items="@(new SelectList(ViewBag.tipodoc, "id_tipdoc", "tipdoc_desc"))">
+					<option>Seleccione tipo documento</option>
+				</select>
+			</div>
+			<div class="col">
+				<label>Documento identidad:</label>
+				<input type="text" class="form-control" placeholder="Documento identidad" id="client_dociden" name="client_dociden">
+			</div>
+		</div>
+		<br />
+		<div class="row">			
+			<div class="col">
+				<label>Email:</label>
+				<input type="text" class="form-control" placeholder="Email" id="client_email" name="client_email">
+			</div>
+			<div class="col">
+				<label>Observacion:</label>
+				<input type="text" class="form-control" placeholder="Observacion" id="client_obser" name="client_obser">
+			</div>			
+		</div>
+		<br />
+		<div class="form-check">
+			<input type="checkbox" class="form-check-input" id="client_act">
+			<label class="form-check-label" for="exampleCheck1">Activo?</label>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-md-6">
+				<button id="btnsave" class="btn btn-success btn-sm">Guardar</button>
+				<button id="btnAddnew" class="btn btn-primary btn-sm">Limpiar Datos</button>
+			</div>
+		</div>
+		<br />
+		<table id="tblclie" class="table table-striped table-bordered" style="width: 100%">
+			<thead>
+				<tr>
+					<th class="d-none">id_client</th>
+					<th class="d-none">id_tipdoc</th>
+					<th>Descripcion</th>
+					<th>Telefono</th>
+					<th>Tipo documento</th>
+					<th>Nro. documento</th>
+					<th>Email</th>
+					<th>Observacion</th>
+					<th>Activo</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+</div>
+@section Scripts {
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$(function () {
+				$("#id_tipdoc").select2({					
+				});
+			});
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.client_desc)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.client_dociden)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.client_tipdoc)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.client_obser)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.client_telf)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.client_email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.client_act)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.client_desc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.client_dociden)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.client_tipdoc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.client_obser)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.client_telf)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.client_email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.client_act)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.id_client">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id_client">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id_client">Delete</a>
-            </td>
-        </tr>
+			$('#tblclie').DataTable({
+				"ajax": {
+					"url": "/api/AClientes",
+					"dataSrc": ""
+				},
+				"pageLength": 15,
+				"language": {
+					"lengthMenu": "Mostrar _MENU_ registros por pagina",
+					"zeroRecords": "No se encontraron registros",
+					"info": "Mostrar pagina _PAGE_ de _PAGES_",
+					"infoEmpty": "No se encontraron registros",
+					"infoFiltered": "(filtrado de _MAX_ registros totales)",
+					"search": "Buscar:",
+					"paginate": {
+						"next": "siguiente",
+						"previous": "Anterior"
+					}
+				},
+				"scrollX": true,
+				"responsive": true,
+				"columns": [
+					{ data: 'id_client', "visible": false },
+					{ data: 'id_tipdoc', "visible": false },
+					{ data: 'client_desc' },
+					{ data: 'client_telf' },
+					{ data: 'tipodoc' },
+					{ data: 'client_dociden' },
+					{ data: 'client_email' },
+					{ data: 'client_obser' },
+					{
+						data: 'client_act',
+						"render": function (data, type, row) {
+							if (row.client_act === true) { return 'Activo'; }
+							else { return 'Inactivo'; }
+						}
+					},
+					{
+						data: "id", render: function (data, type, row, meta) {
+							return "<button class='btn btn-success btn-sm' onclick='Edit(" + JSON.stringify(row) + ")'>Editar</button>" +
+								"<button class='btn btn-danger btn-sm'  onclick='Delete(" + JSON.stringify(row) + ")'>Eliminar</button>";
+						}
+					}
+				]
+			});
+
+			$("#btnsave").click(function () {
+
+				var id_client = $("#id_client").val();
+				var client_desc = $("#client_desc").val();
+				var client_telf = $("#client_telf").val();
+				var id_tipdoc = $("#id_tipdoc").val();
+				var client_dociden = $("#client_dociden").val();
+				var client_email = $("#client_email").val();
+				var client_obser = $("#client_obser").val();
+				var client_act = $("#client_act").val();
+				if (client_desc === '' || client_dociden === '') {
+					swal('Mensaje de advertencia', 'Complete los campos requeridos', 'error');
+				}
+				else {
+					var oCliente = {
+						id_client: $.trim($("#id_client").val()) == "" ? 0 : $("#id_client").val(),
+						client_desc: $("#client_desc").val(),
+						client_telf: $("#client_telf").val(),
+						id_tipdoc: $("#id_tipdoc").val(),
+						client_dociden: $("#client_dociden").val(),
+						client_email: $("#client_email").val(),
+						client_obser: $("#client_obser").val(),
+						client_act: $("#client_act").prop("checked") ? true : false
+					};
+
+					$.post("api/AClientes", { oCliente: oCliente })
+						.done(function (data) {
+							Reset();
+							ReloadGrid();
+							swal('Mensaje de confirmacion', 'Registro Grabado', 'success');
+						});
+				}
+
+			});
+
+			$("#btnAddnew").click(function () {
+				Reset();
+			});
+		});
+
+		function Edit(oCliente) {
+			$("#id_client").val(oCliente.id_client);
+			$("#client_desc").val(oCliente.client_desc);
+			$("#client_telf").val(oCliente.client_telf);
+			$("#id_tipdoc").val(oCliente.id_tipdoc);
+			$("#client_dociden").val(oCliente.client_dociden);
+			$("#client_email").val(oCliente.client_email);
+			$("#client_obser").val(oCliente.client_obser);
+			$("#client_act").val(oCliente.client_act);
+		}
+
+		function Delete(oCliente) {
+			var id = oCliente.id_client;
+			$.ajax({
+				url: "api/AClientes/" + id,
+				type: "DELETE",
+				success: function (result) {
+					swal('Mensaje de confirmacion', 'Categoria eliminada', 'success');
+					ReloadGrid();
+				}
+			});
+		}
+
+		function Reset() {
+			$("#id_client").val(0);
+			$("#client_desc").val("");
+			$("#client_telf").val("");
+			$("#id_tipdoc").val("");
+			$("#client_dociden").val("");
+			$("#client_email").val("");
+			$("#client_obser").val("");
+			$("#client_act").val("");
+		}
+		function ReloadGrid() {
+			$("#tblclie").DataTable().clear();
+			$("#tblclie").DataTable().ajax.reload();
+		}
+
+	</script>
 }
-    </tbody>
-</table>

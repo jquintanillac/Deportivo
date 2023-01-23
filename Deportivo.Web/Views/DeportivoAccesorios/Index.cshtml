@@ -1,44 +1,172 @@
-﻿@model IEnumerable<Deportivo.Web.Data.Entities.DeportivoAccesorio>
-
-@{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@{
+	ViewData["Title"] = "Deportivos Accesorios";
 }
 
-<h1>Index</h1>
+<div class="card card-info">
+	<div class="card-header">
+		<h3 class="text-center">DEPORTIVO ACCESORIOS</h3>
+	</div>
+	<div class="card-body">
+		<div class="row">
+			<div class="col">
+				<input type="hidden" id="id_depacce" value="" />
+				<label>Espacio Deportivo:</label>
+				<select class="form-control" id="id_espdep" asp-items="@(new SelectList(ViewBag.espdep, "id_espdep", "espdep_desc"))">
+					<option>Seleccione espacio deportivo</option>
+				</select>
+			</div>
+			<div class="col">
+				<label>Accesorios:</label>
+				<select class="form-control" id="id_acce" asp-items="@(new SelectList(ViewBag.acces, "id_acce", "acce_desc"))">
+					<option>Seleccione accesorio</option>
+				</select>
+			</div>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-6">
+				<label>Fecha:</label>
+				<input type="Date" class="form-control"  id="depacce_fecingr" name="depacce_fecingr">
+			</div>		
+		</div>
+		<br />
+		<div class="form-check">
+			<input type="checkbox" class="form-check-input" id="depacce_act">
+			<label class="form-check-label" for="exampleCheck1">Activo?</label>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-md-6">
+				<button id="btnsave" class="btn btn-success btn-sm">Guardar</button>
+				<button id="btnAddnew" class="btn btn-primary btn-sm">Limpiar Datos</button>
+			</div>
+		</div>
+		<br />
+		<table id="tbldepacc" class="table table-striped table-bordered" style="width: 100%">
+			<thead>
+				<tr>
+					<th class="d-none">id_depacce</th>
+					<th class="d-none">id_espdep</th>
+					<th class="d-none">id_acce</th>
+					<th>Espacio Deportivo</th>
+					<th>Accesorios</th>
+					<th>Fecha</th>
+					<th>Activo</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+</div>
+@section Scripts {
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$(function () {
+				$("#id_espdep").select2({
+				});
+				$("#id_acce").select2({
+				});
+			});
+			$('#tbldepacc').DataTable({
+				"ajax": {
+					"url": "/api/ADeportivoaccesorio",
+					"dataSrc": ""
+				},
+				"pageLength": 15,
+				"language": {
+					"lengthMenu": "Mostrar _MENU_ registros por pagina",
+					"zeroRecords": "No se encontraron registros",
+					"info": "Mostrar pagina _PAGE_ de _PAGES_",
+					"infoEmpty": "No se encontraron registros",
+					"infoFiltered": "(filtrado de _MAX_ registros totales)",
+					"search": "Buscar:",
+					"paginate": {
+						"next": "siguiente",
+						"previous": "Anterior"
+					}
+				},
+				"scrollX": true,
+				"responsive": true,
+				"columns": [
+					{ data: 'id_depacce', "visible": false },
+					{ data: 'id_espdep', "visible": false },
+					{ data: 'id_acce', "visible": false },
+					{ data: 'espdep_desc' },
+					{ data: 'acce_desc' },
+					{ data: 'depacce_fecingr' },
+					{
+						data: 'depacce_act',
+						"render": function (data, type, row) {
+							if (row.depacce_act === true) { return 'Activo'; }
+							else { return 'Inactivo'; }
+						}
+					},
+					{
+						data: "id", render: function (data, type, row, meta) {
+							return "<button class='btn btn-success btn-sm' onclick='Edit(" + JSON.stringify(row) + ")'>Editar</button>" +
+								"<button class='btn btn-danger btn-sm'  onclick='Delete(" + JSON.stringify(row) + ")'>Eliminar</button>";
+						}
+					}
+				]
+			});
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-           
-            <th>
-                @Html.DisplayNameFor(model => model.depacce_fecingr)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.depacce_act)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-           
-            <td>
-                @Html.DisplayFor(modelItem => item.depacce_fecingr)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.depacce_act)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.id_depacce">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id_depacce">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id_depacce">Delete</a>
-            </td>
-        </tr>
+			$("#btnsave").click(function () {
+
+					var oDepoacc = {
+						id_depacce: $.trim($("#id_depacce").val()) == "" ? 0 : $("#id_depacce").val(),
+						id_espdep: $.trim($("#id_espdep").val()) == "" ? 0 : $("#id_espdep").val(),
+						id_acce: $.trim($("#id_acce").val()) == "" ? 0 : $("#id_acce").val(),
+						depacce_fecingr: $("#depacce_fecingr").val(),
+						depacce_act: $("#depacce_act").prop("checked") ? true : false
+					};
+
+					$.post("api/ADeportivoaccesorio", { oDepoacc: oDepoacc })
+						.done(function (data) {
+							Reset();
+							ReloadGrid();
+							swal('Mensaje de confirmacion', 'Registro Grabado', 'success');
+						});
+				
+
+			});
+
+			$("#btnAddnew").click(function () {
+				Reset();
+			});
+		});
+
+		function Edit(oDepoacc) {
+			$("#id_depacce").val(oDepoacc.id_depacce);
+			$("#id_espdep").val(oDepoacc.id_espdep);
+			$("#id_acce").val(oDepoacc.id_acce);
+			$("#depacce_fecingr").val(oDepoacc.depacce_fecingr);
+			$("#depacce_act").val(oDepoacc.depacce_act);
+		}
+
+		function Delete(oDepoacc) {
+			var id = oDepoacc.id_depacce;
+			$.ajax({
+				url: "api/ADeportivoaccesorio/" + id,
+				type: "DELETE",
+				success: function (result) {
+					swal('Mensaje de confirmacion', 'Categoria eliminada', 'success');
+					ReloadGrid();
+				}
+			});
+		}
+
+		function Reset() {
+			$("#id_depacce").val(0);
+			$("#id_espdep").val(0);
+			$("#id_acce").val(0);
+			$("#depacce_fecingr").val("");
+			$("#depacce_act").val("");
+		}
+		function ReloadGrid() {
+			$("#tbldepacc").DataTable().clear();
+			$("#tbldepacc").DataTable().ajax.reload();
+		}
+
+	</script>
 }
-    </tbody>
-</table>
