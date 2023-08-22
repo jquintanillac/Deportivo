@@ -1,0 +1,150 @@
+﻿@{
+	ViewData["Title"] = "Egresos";
+}
+
+<div class="card card-info">
+	<div class="card-header">
+		<h3 class="text-center">EGRESOS</h3>
+	</div>
+	<div class="card-body">
+		<div class="row">
+			<div class="col">
+				<input type="hidden" id="id_egre" value="" />
+				<label>Descripcion:</label>
+				<input type="text" class="form-control" placeholder="Descripcion" id="egre_descr" name="egre_descr">
+			</div>		
+		</div>
+		<br />
+		<div class="row">
+			<div class="col">
+				<label>Fecha:</label>
+				<input type="datetime-local" class="form-control datepicker" id="egre_fecha" name="egre_fecha" />
+			</div>
+			<div class="col">
+				<label>Monto:</label>
+				<input type="number" step="0.01" class="form-control" placeholder="Monto" id="egre_costo" name="egre_costo">
+			</div>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-md-6">
+				<button id="btnsave" class="btn btn-success btn-sm">Guardar</button>
+				<button id="btnAddnew" class="btn btn-primary btn-sm">Limpiar Datos</button>
+			</div>
+		</div>
+		<br />
+		<table id="tblegre" class="table table-striped table-bordered content-table" style="width: 100%">
+			<thead>
+				<tr>
+					<th class="d-none">id_egre</th>
+					<th>Descripcion</th>
+					<th>Monto</th>
+					<th>Fecha</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+</div>
+@section Scripts {
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#tblegre').DataTable({
+				"ajax": {
+					"url": "/api/AEgresos",
+					"dataSrc": ""
+				},
+				"pageLength": 15,
+				"language": {
+					"lengthMenu": "Mostrar _MENU_ registros por pagina",
+					"zeroRecords": "No se encontraron registros",
+					"info": "Mostrar pagina _PAGE_ de _PAGES_",
+					"infoEmpty": "No se encontraron registros",
+					"infoFiltered": "(filtrado de _MAX_ registros totales)",
+					"search": "Buscar:",
+					"paginate": {
+						"next": "siguiente",
+						"previous": "Anterior"
+					}
+				},
+				"scrollX": true,
+				"responsive": true,
+				"columns": [
+					{ data: 'id_egre', "visible": false },
+					{ data: 'egre_descr' },
+					{ data: 'egre_costo' },
+					{ data: 'egre_fecha' },
+					{
+						data: "id", render: function (data, type, row, meta) {
+							return "<button class='btn btn-success btn-sm' onclick='Edit(" + JSON.stringify(row) + ")'>Editar</button>" +
+								"<button class='btn btn-danger btn-sm'  onclick='Delete(" + JSON.stringify(row) + ")'>Eliminar</button>";
+						}
+					}
+				]
+			});
+
+			$("#btnsave").click(function () {
+
+				var id_egre = $("#id_egre").val();
+				var egre_descr = $("#egre_descr").val();
+				var egre_costo = $("#egre_costo").val();
+				var egre_fecha = $("#egre_fecha").val();
+				if (egre_descr === '' || egre_costo === '') {
+					swal('Mensaje de advertencia', 'Complete los campos requeridos', 'error');
+				}
+				else {
+					var oEgresos = {
+						id_egre: $.trim($("#id_egre").val()) == "" ? 0 : $("#id_egre").val(),
+						egre_descr: $("#egre_descr").val(),
+						egre_costo: $("#egre_costo").val(),
+						egre_fecha: $("#egre_fecha").val()
+					};
+
+					$.post("/api/AEgresos", { oEgresos: oEgresos })
+						.done(function (data) {
+							Reset();
+							ReloadGrid();
+							swal('Mensaje de confirmacion', 'Registro Grabado', 'success');
+						});
+				}
+
+			});
+
+			$("#btnAddnew").click(function () {
+				Reset();
+			});
+		});
+
+		function Edit(oEgresos) {
+			$("#id_egre").val(oEgresos.id_egre);
+			$("#egre_descr").val(oEgresos.egre_descr);
+			$("#egre_costo").val(oEgresos.egre_costo);
+			$("#egre_fecha").val(oEgresos.egre_fecha);
+		}
+
+		function Delete(oEgresos) {
+			var id = oEgresos.id_egre;
+			$.ajax({
+				url: "/api/AEgresos/" + id,
+				type: "DELETE",
+				success: function (result) {
+					swal('Mensaje de confirmacion', 'Registro eliminado', 'success');
+					ReloadGrid();
+				}
+			});
+		}
+
+		function Reset() {
+			$("#id_egre").val(0);
+			$("#egre_descr").val("");
+			$("#egre_costo").val(0);
+			$("#egre_fecha").val("");
+		}
+		function ReloadGrid() {
+			$("#tblegre").DataTable().clear();
+			$("#tblegre").DataTable().ajax.reload();
+		}
+
+	</script>
+}

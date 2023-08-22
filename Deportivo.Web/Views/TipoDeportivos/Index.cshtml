@@ -27,7 +27,7 @@
 			</div>
 		</div>
 		<br />
-		<table id="tbltipdep" class="table table-striped table-bordered" style="width: 100%">
+		<table id="tbltipdep" class="table table-striped table-bordered content-table" style="width: 100%">
 			<thead>
 				<tr>
 					<th class="d-none">id_tipdep</th>
@@ -97,7 +97,7 @@
 						tipdep_act: $("#tipdep_act").prop("checked") ? true : false
 					};
 
-					$.post("api/ATipodeportivo", { oTipdep: oTipdep })
+					$.post("/api/ATipodeportivo", { oTipdep: oTipdep })
 						.done(function (data) {
 							Reset();
 							ReloadGrid();
@@ -121,7 +121,7 @@
 		function Delete(oTipdep) {
 			var id = oTipdep.id_tipdep;
 			$.ajax({
-				url: "api/ATipodeportivo/" + id,
+				url: "/api/ATipodeportivo/" + id,
 				type: "DELETE",
 				success: function (result) {
 					swal('Mensaje de confirmacion', 'Categoria eliminada', 'success');

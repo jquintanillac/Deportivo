@@ -55,7 +55,7 @@
 			</div>
 		</div>
 		<br />
-		<table id="tblclie" class="table table-striped table-bordered" style="width: 100%">
+		<table id="tblclie" class="table table-striped table-bordered content-table" style="width: 100%">
 			<thead>
 				<tr>
 					<th class="d-none">id_client</th>
@@ -152,7 +152,7 @@
 						client_act: $("#client_act").prop("checked") ? true : false
 					};
 
-					$.post("api/AClientes", { oCliente: oCliente })
+					$.post("/api/AClientes", { oCliente: oCliente })
 						.done(function (data) {
 							Reset();
 							ReloadGrid();
@@ -181,7 +181,7 @@
 		function Delete(oCliente) {
 			var id = oCliente.id_client;
 			$.ajax({
-				url: "api/AClientes/" + id,
+				url: "/api/AClientes/" + id,
 				type: "DELETE",
 				success: function (result) {
 					swal('Mensaje de confirmacion', 'Categoria eliminada', 'success');
@@ -194,7 +194,7 @@
 			$("#id_client").val(0);
 			$("#client_desc").val("");
 			$("#client_telf").val("");
-			$("#id_tipdoc").val("");
+			$("#id_tipdoc").val("").trigger("change");
 			$("#client_dociden").val("");
 			$("#client_email").val("");
 			$("#client_obser").val("");

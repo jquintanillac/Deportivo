@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Deportivo.Web.Data;
 using Deportivo.Web.Data.Entities;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace Deportivo.Web.Controllers
 {
+   // [Authorize(Roles = "Admin")]
     public class TipoDeportivosController : Controller
     {
         private readonly DataContext _context;

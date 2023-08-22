@@ -15,7 +15,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deportivo.Cross.Android", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deportivo.Cross.IOS", "Deportivo.Cross.IOS\Deportivo.Cross.IOS.csproj", "{31F25BA2-7CB7-479E-93F7-7D1606E49EFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deportivo.Web", "Deportivo.Web\Deportivo.Web.csproj", "{78AAF727-F009-471B-A1A0-FA2CAD28CF38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Deportivo.Web", "Deportivo.Web\Deportivo.Web.csproj", "{78AAF727-F009-471B-A1A0-FA2CAD28CF38}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3E28E409-0E87-4BE8-B2CB-F43D2FAC7346}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

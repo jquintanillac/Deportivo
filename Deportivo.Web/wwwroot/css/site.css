@@ -18,5 +18,15 @@ body {
 }
 
 .select2-selection {
-    height: auto !important;
+    height: 35px !important;
+}
+
+.content-table thead tr {
+    background-color: #17a2b8;
+    color: white;
+    text-align: left;
+}
+
+.fondo {
+    background-image: url("../Layout/dist/img/fondocs.jpg");
 }

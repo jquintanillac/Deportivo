@@ -1,15 +1,16 @@
 ﻿using Deportivo.Web.Data.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Deportivo.Web.Data
 {
-    public class DataContext : DbContext 
-    {
+    public class DataContext : IdentityDbContext<User>
+	{
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
         }
         public DbSet<Accesorios> accesorios { get; set; }
-        public DbSet<Adicionales> adicionales { get; set; }
+        public DbSet<Adicionales> adicionales { get; set; } 
         public DbSet<Cliente> clientes { get; set; }
         public DbSet<DeportivoAccesorio> deportivoAccesorios { get; set; }
         public DbSet<EspacioDeportivo> espacioDeportivos { get; set; }
@@ -18,7 +19,10 @@ namespace Deportivo.Web.Data
         public DbSet<PagoDetalle> pagoDetalles { get; set; }
         public DbSet<TipoDeportivo> tipoDeportivos { get; set; }
         public DbSet<TipoDocumento> tipoDocumentos { get; set; }
-
+        public DbSet<Eventos> eventos { get; set; }
+		public DbSet<Egresos> egresos { get; set; }
+		public DbSet<Inicial> iniciales { get; set; }
+        public DbSet<Numeracion> numeraciones { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

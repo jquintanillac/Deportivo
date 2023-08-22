@@ -1,0 +1,173 @@
+﻿@{
+	ViewData["Title"] = "Numeracion";
+}
+
+<div class="card card-info">
+	<div class="card-header">
+		<h3 class="text-center">NUMERACION DOCUMENTARIA</h3>
+	</div>
+	<div class="card-body">
+		<div class="row">
+			<div class="col">
+				<input type="hidden" id="id_nume" value="" />
+				<label>Serie:</label>
+				<input type="text" class="form-control" placeholder="Serie" id="nume_serie" name="nume_serie">
+			</div>
+			<div class="col">
+				<label>Numero:</label>
+				<input type="text" class="form-control" placeholder="Numeracion" id="nume_numero" name="nume_numero">
+			</div>
+		</div>
+		<br />
+		<div class="row align-items-end">
+			<div class="col">
+				<label>Tipo:</label>
+				<input type="text" class="form-control" placeholder="Observacion" id="nume_tipo" name="nume_tipo">
+			</div>
+			<div class="col">
+				<input type="checkbox" class="form-check-input" id="nume_act">
+				<label class="form-check-label" for="exampleCheck1">Activo?</label>
+			</div>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-4">
+				<label>* (F): Facturas</label>
+				<label>* (B): Boletas </label>
+			</div>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-md-6">
+				<button id="btnsave" class="btn btn-success btn-sm">Guardar</button>
+				<button id="btnAddnew" class="btn btn-primary btn-sm">Limpiar Datos</button>
+			</div>
+		</div>
+		<br />
+		<table id="tblnumer" class="table table-striped table-bordered content-table" style="width: 100%">
+			<thead>
+				<tr>
+					<th class="d-none">id_nume</th>
+					<th>Serie</th>
+					<th>Numero</th>
+					<th>Tipo</th>
+					<th>Activo</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+</div>
+@section Scripts {
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#tblnumer').DataTable({
+				"ajax": {
+					"url": "/api/ANumeracion",
+					"dataSrc": ""
+				},
+				"pageLength": 15,
+				"language": {
+					"lengthMenu": "Mostrar _MENU_ registros por pagina",
+					"zeroRecords": "No se encontraron registros",
+					"info": "Mostrar pagina _PAGE_ de _PAGES_",
+					"infoEmpty": "No se encontraron registros",
+					"infoFiltered": "(filtrado de _MAX_ registros totales)",
+					"search": "Buscar:",
+					"paginate": {
+						"next": "siguiente",
+						"previous": "Anterior"
+					}
+				},
+				"scrollX": true,
+				"responsive": true,
+				"columns": [
+					{ data: 'id_nume', "visible": false },
+					{ data: 'nume_serie' },
+					{ data: 'nume_numero' },
+					{ data: 'nume_tipo' },
+					{
+						data: 'nume_act',
+						"render": function (data, type, row) {
+							if (row.nume_act === true) { return 'Activo'; }
+							else { return 'Inactivo'; }
+						}
+					},
+					{
+						data: "id", render: function (data, type, row, meta) {
+							return "<button class='btn btn-success btn-sm' onclick='Edit(" + JSON.stringify(row) + ")'>Editar</button>" +
+								"<button class='btn btn-danger btn-sm'  onclick='Delete(" + JSON.stringify(row) + ")'>Eliminar</button>";
+						}
+					}
+				]
+			});
+
+			$("#btnsave").click(function () {
+
+				var id_nume = $("#id_nume").val();
+				var nume_serie = $("#nume_serie").val();
+				var nume_numero = $("#nume_numero").val();
+				var nume_tipo = $("#nume_tipo").val();
+				var nume_act = $("#nume_act").val();
+				if (nume_serie === '' || nume_numero === '') {
+					swal('Mensaje de advertencia', 'Complete los campos requeridos', 'error');
+				}
+				else {
+					var oNumero = {
+						id_nume: $.trim($("#id_nume").val()) == "" ? 0 : $("#id_nume").val(),
+						nume_serie: $("#nume_serie").val(),
+						nume_numero: $("#nume_numero").val(),
+						nume_tipo: $("#nume_tipo").val(),
+						nume_act: $("#nume_act").prop("checked") ? true : false
+					};
+
+					$.post("/api/ANumeracion", { oNumero: oNumero })
+						.done(function (data) {
+							Reset();
+							ReloadGrid();
+							swal('Mensaje de confirmacion', 'Registro Grabado', 'success');
+						});
+				}
+
+			});
+
+			$("#btnAddnew").click(function () {
+				Reset();
+			});
+		});
+
+		function Edit(oNumero) {
+			$("#id_nume").val(oNumero.id_nume);
+			$("#nume_serie").val(oNumero.nume_serie);
+			$("#nume_numero").val(oNumero.nume_numero);
+			$("#nume_tipo").val(oNumero.nume_tipo);
+			$("#nume_act").val(oNumero.nume_act);
+		}
+
+		function Delete(oNumero) {
+			var id = oNumero.id_nume;
+			$.ajax({
+				url: "/api/ANumeracion/" + id,
+				type: "DELETE",
+				success: function (result) {
+					swal('Mensaje de confirmacion', 'Registro eliminado', 'success');
+					ReloadGrid();
+				}
+			});
+		}
+
+		function Reset() {
+			$("#id_nume").val(0);
+			$("#nume_serie").val("");
+			$("#nume_numero").val("");
+			$("#nume_tipo").val("");
+
+		}
+		function ReloadGrid() {
+			$("#tblnumer").DataTable().clear();
+			$("#tblnumer").DataTable().ajax.reload();
+		}
+
+	</script>
+}

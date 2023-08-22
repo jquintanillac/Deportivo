@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Deportivo.Web.Data;
 using Deportivo.Web.Data.Entities;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace Deportivo.Web.Controllers
 {
+    //[Authorize(Roles = "Admin")]
     public class ClientesController : Controller
     {
         private readonly DataContext _context;
@@ -23,7 +26,7 @@ namespace Deportivo.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            ViewBag.tipodoc = await _context.tipoDocumentos.ToListAsync();
+            ViewBag.tipodoc = await _context.tipoDocumentos.Where(x => x.tipodoc_tipo == "I").ToListAsync();
             return View();
         }
       

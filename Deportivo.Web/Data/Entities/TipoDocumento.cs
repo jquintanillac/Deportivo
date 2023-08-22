@@ -9,6 +9,7 @@ namespace Deportivo.Web.Data.Entities
         [Key]
         public int id_tipdoc { get; set; }
         public string? tipdoc_desc { get; set; }
+        public string? tipodoc_tipo { get; set; }
         public bool tipdoc_act { get; set; }       
 
     }

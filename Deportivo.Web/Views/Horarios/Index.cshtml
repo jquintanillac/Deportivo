@@ -1,28 +1,49 @@
 ﻿@{
-	ViewData["Title"] = "Index";
+	ViewData["Title"] = "Horario";
 }
 
 <div class="card card-info">
 	<div class="card-header">
-		<h3 class="text-center">CATEGORIAS</h3>
+		<h3 class="text-center">HORARIOS</h3>
 	</div>
 	<div class="card-body">
 		<div class="row">
 			<div class="col">
-				<input type="hidden" id="id_categ" value="" />
-				<label>Categoria:</label>
-				<input type="text" class="form-control" placeholder="Categoria" id="categ_descr" name="categ_descr">
+				<input type="hidden" id="id_hordep" value="" />
+				<label>Espacio Deportivo:</label>
+				<select class="form-control" id="id_espdep" asp-items="@(new SelectList(ViewBag.espdepor, "id_espdep", "espdep_desc"))">
+					<option>Seleccione espacio deportivo</option>
+				</select>
 			</div>
 			<div class="col">
-				<label>Codigo:</label>
-				<input type="text" class="form-control" placeholder="Codigo" id="categ_codigo" name="categ_codigo">
+				<label>Cliente:</label>
+				<select class="form-control" id="id_client" asp-items="@(new SelectList(ViewBag.cliente, "id_client", "client_desc"))">
+					<option>Seleccione cliente</option>
+				</select>
+			</div>
+		</div>
+		<br />		
+		<div class="row">
+			<div class="col">
+				<label>Fecha y hora ingreso:</label>				
+				<input type="datetime-local" class="form-control datepicker" id="hordep_fecing" name="hordep_fecing" />
+			</div>
+			<div class="col">
+				<label>Fecha y hora salida:</label>
+				<input type="datetime-local" class="form-control datepicker" id="hordep_fecsal" name="hordep_fecsal" />
 			</div>
 		</div>
 		<br />
-		<div class="form-check">
-			<input type="checkbox" class="form-check-input" id="categ_act">
-			<label class="form-check-label" for="exampleCheck1">Activo?</label>
-		</div>
+		<div class="row">
+			<div class="col">
+				<label>Descripcion:</label>
+				<input type="text" class="form-control" placeholder="Descripcion" id="hordep_desc" name="hordep_desc" />
+			</div>
+			<div class="col">
+				<label>Observacion:</label>
+				<input type="text" class="form-control" placeholder="Observacion" id="hordep_obse" name="hordep_obse" />
+			</div>
+		</div>		
 		<br />
 		<div class="row">
 			<div class="col-md-6">
@@ -31,13 +52,19 @@
 			</div>
 		</div>
 		<br />
-		<table id="tblcateg" class="table table-striped table-bordered" style="width: 100%">
+		<table id="tblhorar" class="table table-sm table-striped table-bordered content-table" style="width: 100%">
 			<thead>
 				<tr>
-					<th class="d-none">id_categ</th>
+					<th class="d-none">id_hordep</th>
+					<th class="d-none">id_espdep</th>
+					<th class="d-none">id_client</th>
+					<th>Cliente</th>
+					<th>Espacio Deportivo</th>
 					<th>Descripcion</th>
-					<th>Codigo</th>
-					<th>Activo</th>
+					<th>Fecha y hora ingreso</th>
+					<th>Fecha y hora salida</th>
+					<th>Observacion</th>
+					<th>Estado</th>
 					<th>Acciones</th>
 				</tr>
 			</thead>
@@ -45,12 +72,21 @@
 		</table>
 	</div>
 </div>
-@*@section Scripts {
-	<script type="text/javascript">
-		$(document).ready(function () {
-			$('#tblcateg').DataTable({
+@section Scripts {
+	<script type="text/javascript">	
+		$(document).ready(function () {		
+
+			$(function () {
+				$("#id_espdep").select2({
+				});
+
+				$("#id_client").select2({
+				});
+			});		
+
+			$('#tblhorar').DataTable({
 				"ajax": {
-					"url": "/api/ACategoria",
+					"url": "/api/AHorarios",
 					"dataSrc": ""
 				},
 				"pageLength": 15,
@@ -69,14 +105,21 @@
 				"scrollX": true,
 				"responsive": true,
 				"columns": [
-					{ data: 'id_categ', "visible": false },
-					{ data: 'categ_descr' },
-					{ data: 'categ_codigo' },
+					{ data: 'id_hordep', "visible": false },
+					{ data: 'id_espdep', "visible": false },
+					{ data: 'id_client', "visible": false },
+					{ data: 'client_desc' },
+					{ data: 'espdep_desc' },
+					{ data: 'hordep_desc' },
+					{ data: 'hordep_fecing' },
+					{ data: 'hordep_fecsal' },
+					{ data: 'hordep_obse' },
 					{
-						data: 'categ_act',
+						data: 'hordep_tipo',
 						"render": function (data, type, row) {
-							if (row.categ_act === true) { return 'Activo'; }
-							else { return 'Inactivo'; }
+							if (row.hordep_tipo === 'RES') { return 'Reservado'; }
+							else if (row.hordep_tipo === 'PAG') { return 'Pagado'; }
+							else { return 'Generado'; }
 						}
 					},
 					{
@@ -90,26 +133,38 @@
 
 			$("#btnsave").click(function () {
 
-				var id_categ = $("#id_categ").val();
-				var categ_descr = $("#categ_descr").val();
-				var categ_codigo = $("#categ_codigo").val();
-				var categ_act = $("#categ_act").val();
-				if (categ_descr === '' || categ_codigo === '') {
+				var id_hordep = $("#id_hordep").val();
+				var id_espdep = $("#id_espdep").val();
+				var id_client = $("#id_client").val();
+				var hordep_desc = $("#hordep_desc").val();
+				var hordep_fecing = $("#hordep_fecing").val();
+				var hordep_fecsal = $("#hordep_fecsal").val();
+				var hordep_obse = $("#hordep_obse").val();
+				if (hordep_desc === '' ) {
 					swal('Mensaje de advertencia', 'Complete los campos requeridos', 'error');
 				}
 				else {
-					var oCategoria = {
-						id_categ: $.trim($("#id_categ").val()) == "" ? 0 : $("#id_categ").val(),
-						categ_descr: $("#categ_descr").val(),
-						categ_codigo: $("#categ_codigo").val(),
-						categ_act: $("#categ_act").prop("checked") ? true : false
+					var oHorario = {
+						id_hordep: $.trim($("#id_hordep").val()) == "" ? 0 : $("#id_hordep").val(),
+						id_espdep: $.trim($("#id_espdep").val()) == "" ? 0 : $("#id_espdep").val(),
+						id_client: $.trim($("#id_client").val()) == "" ? 0 : $("#id_client").val(),
+						hordep_desc: $("#hordep_desc").val(),
+						hordep_fecing: $("#hordep_fecing").val(),
+						hordep_fecsal: $("#hordep_fecsal").val(),
+						hordep_obse: $("#hordep_obse").val(),
 					};
 
-					$.post("api/ACategoria", { oCategoria: oCategoria })
-						.done(function (data) {
-							Reset();
-							ReloadGrid();
-							swal('Mensaje de confirmacion', 'Registro Grabado', 'success');
+					$.post("/api/AHorarios", { oHorario: oHorario })
+						.done(function (result) {
+							if (result === 'S') {
+								Reset();
+								ReloadGrid();
+								swal('Mensaje de confirmacion', 'Registro Grabado', 'success');
+							}
+							else{
+								swal('Mensaje de advertencia', 'Horario repetido, por favor escoja otro', 'error');
+							}
+						
 						});
 				}
 
@@ -120,34 +175,42 @@
 			});
 		});
 
-		function Edit(oCategoria) {
-			$("#id_categ").val(oCategoria.id_categ);
-			$("#categ_descr").val(oCategoria.categ_descr);
-			$("#categ_codigo").val(oCategoria.categ_codigo);
-			$("#categ_act").val(oCategoria.categ_act);
+		function Edit(oHorario) {
+			$("#id_hordep").val(oHorario.id_hordep);
+			$("#id_espdep").val(oHorario.id_espdep).trigger("change");
+			$("#id_client").val(oHorario.id_client).trigger("change");
+			$("#hordep_desc").val(oHorario.hordep_desc);
+			$("#hordep_fecing").val(oHorario.hordep_fecing).trigger("change");
+			$("#hordep_fecsal").val(oHorario.hordep_fecsal).trigger("change");
+			$("#hordep_obse").val(oHorario.hordep_obse);
+
 		}
 
-		function Delete(oCategoria) {
-			var id = oCategoria.id_categ;
+		function Delete(oHorario) {
+			var id = oHorario.id_hordep;
 			$.ajax({
-				url: "api/ACategoria/" + id,
+				url: "/api/AHorarios/" + id,
 				type: "DELETE",
 				success: function (result) {
-					swal('Mensaje de confirmacion', 'Categoria eliminada', 'success');
+					swal('Mensaje de confirmacion', 'Registro eliminado', 'success');
 					ReloadGrid();
 				}
 			});
 		}
 
 		function Reset() {
-			$("#id_categ").val(0);
-			$("#categ_descr").val("");
-			$("#categ_codigo").val("");
+			$("#id_hordep").val(0);
+			$("#id_espdep").val("").trigger("change");
+			$("#id_client").val("").trigger("change");
+			$("#hordep_desc").val("");
+			$("#hordep_fecing").val("").change();
+			$("#hordep_fecsal").val("").change();
+			$("#hordep_obse").val("");
 		}
 		function ReloadGrid() {
-			$("#tblcateg").DataTable().clear();
-			$("#tblcateg").DataTable().ajax.reload();
+			$("#tblhorar").DataTable().clear();
+			$("#tblhorar").DataTable().ajax.reload();
 		}
 
 	</script>
-}*@
+}

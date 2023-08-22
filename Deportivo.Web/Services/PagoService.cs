@@ -1,4 +1,5 @@
 ﻿using Deportivo.Web.Data;
+using Deportivo.Web.Data.Entities;
 using Deportivo.Web.IServices;
 using Deportivo.Web.Models;
 using Microsoft.EntityFrameworkCore;
@@ -12,25 +13,38 @@ namespace Deportivo.Web.Services
         {
             _context = context;
         }
-
         public string Delete(int id_pagcab)
         {
-            throw new NotImplementedException();
-        }
+			var pagos = _context.pagoCabeceras.FirstOrDefault(x => x.id_pagcab == id_pagcab);
+			if (pagos != null)
+			{
+				_context.pagoCabeceras.Remove(pagos);
+				_context.SaveChanges();
 
-        public Task<List<VMPago>> Getpago()
-        {
-            throw new NotImplementedException();
-        }
+                List<PagoDetalle> pagodet = _context.pagoDetalles.Where(x => x.id_pagcab == id_pagcab).ToList();
+                foreach (PagoDetalle detalle in pagodet)
+                {
+                    _context.pagoDetalles.Remove(detalle);
+                }
 
-        public void Save(VMPago oPago)
-        {
-            throw new NotImplementedException();
-        }
+            }
+			return "Deleted";
+		}
 
-        public void Update(VMPago oPago)
+        public async Task<List<GetPago>> Getpago()
         {
-            throw new NotImplementedException();
-        }
-    }
+			var vmpago = await(from pago in _context.pagoCabeceras
+									join cliente in _context.clientes on pago.id_client equals cliente.id_client
+									select new GetPago
+									{
+										id_pagcab = pago.id_pagcab,
+										client_desc = cliente.client_desc,
+										pagcab_nro = pago.pagcab_nro,
+										pagcab_fecemis = pago.pagcab_fecemis,
+										pagcab_total = pago.pagcab_total
+									}).ToListAsync();
+			return vmpago;
+		}
+
+	}
 }

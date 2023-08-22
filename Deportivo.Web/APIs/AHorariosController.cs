@@ -26,23 +26,28 @@ namespace Deportivo.Web.APIs
    
         // POST api/<AHorariosController>
         [HttpPost]
-        public void Post([FromForm] Horario oHorario)
+        public string Post([FromForm] Horario oHorario)
         {
+            string result;
             if (oHorario.id_hordep == 0)
             {
-                _horarios.Save(oHorario);
+              result = _horarios.Save(oHorario);
             }
             else
             {
-                _horarios.Update(oHorario);
+              result = _horarios.Update(oHorario);
             }
+
+            return result;
         }
 
 
         // DELETE api/<AHorariosController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public string Delete(int id)
         {
+            return _horarios.Delete(id);
+
         }
     }
 }

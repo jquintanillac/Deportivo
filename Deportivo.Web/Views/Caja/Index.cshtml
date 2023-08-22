@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewData["Title"] = "Caja Diaria";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card card-info">
+	<div class="card-header">
+		<h3 class="text-center">CAJA DIARIA</h3>
+	</div>
+	<div class="card-body">
+		<div class="row">
+			<div class="col">
+				<label>Fecha Inicio:</label>
+				<input type="datetime-local" class="form-control datepicker" id="fecini" name="fecini" />
+			</div>
+			<div class="col">
+				<label>Fecha Fin:</label>
+				<input type="datetime-local" class="form-control datepicker" id="fecfin" name="fecfin" />
+			</div>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-md-6">
+				<button id="btnbuscar" class="btn btn-success btn-sm">Buscar</button>
+				<button id="btnAddnew" class="btn btn-primary btn-sm">Limpiar Datos</button>
+			</div>
+		</div>
+		<br />
+		<table id="tblcaja" class="table table-striped table-bordered content-table" style="width: 100%">
+			<thead>
+				<tr>
+					<th>FECHA INICIO</th>
+					<th>FECHA FIN</th>
+					<th>EGRESOS</th>
+					<th>SALDO INICIAL</th>
+					<th>CANTIDAD CANCHAS</th>
+					<th>MONTO TOTAL CANCHAS</th>
+					<th>CANTIDAD ADICIONAL</th>
+					<th>MONTO TOTAL ADICIONAL</th>
+					<th>CAJA MONTO TOTAL</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+</div>
+@section Scripts {
+	<script type="text/javascript">
+
+		$("#btnbuscar").click(function () {
+			var fecini = $('#fecini').val();
+			var fecfin = $('#fecfin').val();
+			tblcaja(fecini, fecfin);
+		});
+
+		$("#btnAddnew").click(function (){
+			Reset();
+		});
+
+		function tblcaja(fecini, fecfin) {
+			$('#tblcaja').DataTable({
+				"destroy": true,
+				"ajax": {
+					"url": "/api/ACaja",
+					"data": { "fecini": fecini, "fecfin": fecfin },
+					"dataSrc": ""
+				},
+				"pageLength": 15,
+				"language": {
+					"lengthMenu": "Mostrar _MENU_ registros por pagina",
+					"zeroRecords": "No se encontraron registros",
+					"info": "Mostrar pagina _PAGE_ de _PAGES_",
+					"infoEmpty": "No se encontraron registros",
+					"infoFiltered": "(filtrado de _MAX_ registros totales)",
+					"search": "Buscar:",
+					"paginate": {
+						"next": "siguiente",
+						"previous": "Anterior"
+					}
+				},
+				"scrollX": true,
+				"responsive": true,
+				"dom": 'Bfrtilp',
+				"buttons": [
+					{
+						"extend": 'excelHtml5',
+						"text": '<i class="bi bi-file-earmark-excel"></i>',
+						"titleAttr": 'Exportar a excel',
+						"className": 'btn btn-success'
+					},
+					{
+						"extend": 'pdfHtml5',
+						"text": '<i class="bi bi-file-earmark-pdf"></i>',
+						"titleAttr": 'Exportar a PDF',
+						"className": 'btn btn-danger'
+					},
+				],
+				"columns": [
+					{ data: 'FECINI' },
+					{ data: 'FECFIN' },
+					{ data: 'EGRESOS' },
+					{ data: 'INICIAL' },
+					{ data: 'CANC_CANT' },
+					{ data: 'CANC_DETA' },
+					{ data: 'ADIC_CANT' },
+					{ data: 'ADIC_DETA' },
+					{ data: 'CAJA_MONTO' },
+					
+				]
+			});
+
+		}			
+
+		function Reset() {
+			$("#fecini").val("");
+			$("#fecfin").val("");
+			$("#tblcaja").DataTable().clear();
+		}
+		function ReloadGrid() {
+			$("#tblcaja").DataTable().clear();
+			$("#tblcaja").DataTable().ajax.reload();
+		}
+
+	</script>
+}
+
+

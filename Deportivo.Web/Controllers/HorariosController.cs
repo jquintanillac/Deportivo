@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Deportivo.Web.Data;
 using Deportivo.Web.Data.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Deportivo.Web.Controllers
 {
+    //[Authorize(Roles = "Admin")]
     public class HorariosController : Controller
     {
         private readonly DataContext _context;
@@ -20,11 +22,19 @@ namespace Deportivo.Web.Controllers
         }
 
         // GET: Horarios
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-              return View();
+            ViewBag.espdepor = await _context.espacioDeportivos.Where(x => x.espdep_act == true).ToListAsync();
+            ViewBag.cliente = await _context.clientes.Where(x => x.client_act == true).ToListAsync();
+            return View();
         }
-        private bool HorarioExists(int id)
+
+		public IActionResult Calendar()
+		{			
+			return View();
+		}
+
+		private bool HorarioExists(int id)
         {
           return _context.horarios.Any(e => e.id_hordep == id);
         }

@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Deportivo.Web.Data.Entities;
+using Deportivo.Web.IServices;
+using Deportivo.Web.Models;
+using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,36 +11,25 @@ namespace Deportivo.Web.APIs
     [ApiController]
     public class APagosController : ControllerBase
     {
-        // GET: api/<APagosController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+		IPagoCabecera _pagoCabecera;
 
-        // GET api/<APagosController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+		public APagosController(IPagoCabecera pagoCabecera)
+		{
+			_pagoCabecera = pagoCabecera;
+		}
+		// GET: api/<APagosController>
+		[HttpGet]
+        public async Task<IEnumerable<GetPago>> GetAll()
         {
-            return "value";
+            return await _pagoCabecera.Getpago();                 
         }
-
-        // POST api/<APagosController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/<APagosController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
+     
+      
         // DELETE api/<APagosController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public string Delete(int id)
         {
+            return _pagoCabecera.Delete(id);
         }
     }
 }

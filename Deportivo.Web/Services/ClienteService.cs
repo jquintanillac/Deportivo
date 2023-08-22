@@ -27,7 +27,7 @@ namespace Deportivo.Web.Services
         public async Task<List<VMCliente>> Getcliente()
         {
             var vmviatdet = await (from cliente in _context.clientes
-                             join tipodocumento in _context.tipoDocumentos on cliente.id_tipdoc equals tipodocumento.id_tipdoc                             
+                             join tipodocumento in _context.tipoDocumentos on cliente.id_tipdoc equals tipodocumento.id_tipdoc
                              select new VMCliente
                              {
                                  id_client = cliente.id_client,
