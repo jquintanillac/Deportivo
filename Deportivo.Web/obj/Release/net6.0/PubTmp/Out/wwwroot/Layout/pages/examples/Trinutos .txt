@@ -1,0 +1,30 @@
+	SET @Asunto = 'TRANSITO CONCLUSION – VEHICULO ' + @CO_PAIS + ' - ' +	@ISID_REGI_PLAC
+				SET @Cabecera = '<font FACE="impact" SIZE=4>' + 'PESOS ' + @CO_PAIS + ' ADUANAS: ' + '</font>'+'<br />'    
+       
+				SET @List = '<FONT FACE="courier" SIZE=4>'+
+							'Movimiento de Balanza: '+ '<font color = "#3A01DF">' + @INNU_MOVI_BALA + '</font>' +
+							'<br/>'+
+							'1er peso Bruto: ' + '<font color = "#3A01DF">' +  CONVERT(VARCHAR, @INCA_PES1) + '</font>' + 
+							'<br/>'+
+							'Fecha/hora ingreso:' + '<font color = "#3A01DF">' + LEFT(CONVERT(VARCHAR, @ISFE_ENTR, 120), 10)  + '/' + @ISHO_ENTR + '</font>' + 
+							'<br/>'+
+							'Placa de vehiculo: '+ '<font color = "#3A01DF">' + @ISID_REGI_PLAC + '</font>' + 
+							'<br/>'+
+							'Mercaderia: ' + '<font color = "#3A01DF">' +  @DESC_CARGA + '</font>' + 
+							'<br/>'+
+							'MIC: '+ '<font color = "#3A01DF">' + @MICS + '</font>' + 
+							'<br/>'+
+							'<br/>'+
+							'<br/>'+
+							'<br/>'+
+							'TISUR envia la informacion a los interesados. Gracias.' +'</FONT>'
+    
+					SET @Cuerpo = @Cabecera + @List          			    
+					SET @CorreoDestinatario = 'JQuintanillaC@tisur.com.pe' + '; cecamollendo@sunat.gob.pe' + '; taimollendo@sunat.gob.pe' + '; jmedinacc@sunat.gob.pe' + '; jcollancab@tisur.com.pe' + '; nquevedod@sunat.gob.pe'
+  
+					EXEC msdb.dbo.sp_send_dbmail     
+					@recipients = @CorreoDestinatario,  
+					@subject = @Asunto,  
+					@body = @Cuerpo,  
+					@body_format = 'HTML',  
+					@profile_name = 'TisurNotificaciones';  

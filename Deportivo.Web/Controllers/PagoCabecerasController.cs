@@ -59,8 +59,7 @@ namespace Deportivo.Web.Controllers
 				_context.pagoCabeceras.Add(oPagar);
 				_context.SaveChanges();
 				var opagocab = await _context.pagoCabeceras.OrderByDescending(t => t.id_pagcab).FirstOrDefaultAsync();
-				
-				if (opagocab.id_tipodoc == 7)
+				if (opagocab.id_tipodoc == 3)
 				{
 					int Ifactu = opagocab.pagcab_nro.Length;
 					int NFactu = Ifactu - 4;

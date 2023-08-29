@@ -1,0 +1,32 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.select2-selection {
+    height: 35px !important;
+}
+
+.content-table thead tr {
+    background-color: #17a2b8;
+    color: white;
+    text-align: left;
+}
+
+.fondo {
+    background-image: url("../Layout/dist/img/fondocs.jpg");
+}

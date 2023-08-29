@@ -1,0 +1,64 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Cross.IOS\\Deportivo.Cross.IOS.csproj": {}
+  },
+  "projects": {
+    "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Cross.IOS\\Deportivo.Cross.IOS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Cross.IOS\\Deportivo.Cross.IOS.csproj",
+        "projectName": "Deportivo.Cross.IOS",
+        "projectPath": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Cross.IOS\\Deportivo.Cross.IOS.csproj",
+        "packagesPath": "C:\\Users\\juanq\\.nuget\\packages\\",
+        "outputPath": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Cross.IOS\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\juanq\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "xamarinios10"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "xamarinios10": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "xamarinios10": {
+          "dependencies": {
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.6.1, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-arm64": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
