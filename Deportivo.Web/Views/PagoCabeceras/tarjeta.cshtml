@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewData["Title"] = "tarjeta";
+    Layout = null;
+}
+<head>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Deportivo.Web.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+</head>
+<body class="fondochekout">
+    <div class="container">
+        <div class="py-5 text-center">
+            <h2 class="text-white">Checkout</h2>
+            <p class="lead text-white">Una vez realizado el pago no habra devoluciones.</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4 order-md-2 mb-4">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-white">Horario escogido</span>
+                    <span class="badge badge-secondary badge-pill">Conceptos</span>
+                </h4>
+                <ul class="list-group mb-3 sticky-top">
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">Fecha:</h6>
+                            <small class="text-muted"></small>
+                        </div>
+                        <span class="text-muted">@ViewBag.fecha</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">Horario Inicio:</h6>
+                            <small class="text-muted"></small>
+                        </div>
+                        <span class="text-muted">@ViewBag.horini</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">Hora Fin:</h6>
+                            <small class="text-muted"></small>
+                        </div>
+                        <span class="text-muted">@ViewBag.horfin</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">Cancha sintetica:</h6>
+                            <small class="text-muted"></small>
+                        </div>
+                        <span class="text-muted">@ViewBag.cancha</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Total (S/.)</span>
+                        <strong>@ViewBag.pago</strong>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-8 order-md-1">             
+                    <hr class="mb-4">
+                <h4 class="mb-3 text-white">Pago</h4>
+                <form class="needs-validation" novalidate="">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-name" class="text-white">Nombre de la tarjeta</label>
+                            <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                        <small class="text-muted text-white">
+                            Nombre completo como se muestra en la tarjeta.
+                        </small>
+                            <div class="invalid-feedback text-white"> Nombre de la tarjega es requerido. </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-number" class="text-white">Número de Tarjeta de Crédito</label>
+                            <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                            <div class="invalid-feedback text-white"> Número de Tarjeta de Crédito es requerido. </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label for="cc-expiration" class="text-white">Expiracion</label>
+                            <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+                            <div class="invalid-feedback text-white"> Fecha de expiracion requerida </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="cc-cvv" class="text-white">CVV</label>
+                            <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                            <div class="invalid-feedback text-white"> Codigo de seguridad requerido </div>
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Continuar con el pago</button>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>

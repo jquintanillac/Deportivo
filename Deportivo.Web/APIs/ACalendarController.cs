@@ -26,8 +26,7 @@ namespace Deportivo.Web.APIs
                 title = e.title,
                 description = e.Description,
                 start = e.start.ToString("yyyy-MM-ddTHH:mm:ss"),
-                end = e.end.ToString("yyyy-MM-ddTHH:mm:ss"),
-                Alldays = false
+                end = e.end.ToString("yyyy-MM-ddTHH:mm:ss")
             }).ToListAsync();
             return new JsonResult(events);
         }

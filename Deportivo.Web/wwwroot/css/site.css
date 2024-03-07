@@ -30,3 +30,23 @@ body {
 .fondo {
     background-image: url("../Layout/dist/img/fondocs.jpg");
 }
+
+.modal-header {
+    background-color: #17a2b8;
+    text-align: center !important;
+    color: white; 
+}
+
+.lh-condensed {
+    line-height: 1.25;
+}
+
+.fondochekout {
+    background-image: url("../Layout/dist/img/fondochekout.jpg");
+}
+
+.mdlTitulo {
+    background-color: #17a2b8;
+    color: white;
+    text-align: center !important;
+}

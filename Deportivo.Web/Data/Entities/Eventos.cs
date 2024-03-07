@@ -13,6 +13,6 @@ namespace Deportivo.Web.Data.Entities
 		public string Description { get; set; }
 		public DateTime start { get; set; }
 		public DateTime end { get; set; }
-		public string Location { get; set; }
+        public string Location { get; set; }
 	}
 }

@@ -541,342 +541,6 @@
       "PackagePath": "staticwebassets\\DataTables\\pdfmake-0.2.7\\vfs_fonts.js"
     },
     {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales-all.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales-all.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales-all.min.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales-all.min.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\af.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\af.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\ar-dz.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\ar-dz.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\ar-kw.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\ar-kw.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\ar-ly.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\ar-ly.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\ar-ma.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\ar-ma.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\ar-sa.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\ar-sa.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\ar-tn.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\ar-tn.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\ar.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\ar.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\az.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\az.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\bg.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\bg.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\bn.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\bn.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\bs.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\bs.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\ca.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\ca.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\cs.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\cs.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\cy.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\cy.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\da.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\da.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\de-at.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\de-at.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\de.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\de.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\el.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\el.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\en-au.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\en-au.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\en-gb.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\en-gb.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\en-nz.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\en-nz.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\eo.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\eo.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\es-us.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\es-us.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\es.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\es.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\et.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\et.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\eu.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\eu.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\fa.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\fa.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\fi.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\fi.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\fr-ca.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\fr-ca.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\fr-ch.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\fr-ch.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\fr.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\fr.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\gl.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\gl.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\he.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\he.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\hi.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\hi.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\hr.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\hr.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\hu.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\hu.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\hy-am.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\hy-am.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\id.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\id.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\is.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\is.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\it.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\it.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\ja.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\ja.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\ka.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\ka.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\kk.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\kk.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\km.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\km.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\ko.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\ko.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\ku.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\ku.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\lb.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\lb.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\lt.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\lt.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\lv.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\lv.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\mk.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\mk.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\ms.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\ms.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\nb.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\nb.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\ne.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\ne.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\nl.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\nl.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\nn.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\nn.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\pl.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\pl.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\pt-br.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\pt-br.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\pt.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\pt.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\ro.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\ro.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\ru.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\ru.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\si-lk.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\si-lk.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\sk.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\sk.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\sl.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\sl.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\sm.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\sm.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\sq.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\sq.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\sr-cyrl.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\sr-cyrl.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\sr.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\sr.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\sv.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\sv.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\ta-in.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\ta-in.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\th.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\th.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\tr.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\tr.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\ug.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\ug.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\uk.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\uk.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\uz.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\uz.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\vi.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\vi.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\zh-cn.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\zh-cn.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\locales\\zh-tw.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\locales\\zh-tw.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\main.css",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\main.css"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\main.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\main.js"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\main.min.css",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\main.min.css"
-    },
-    {
-      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Fullcalendar\\lib\\main.min.js",
-      "PackagePath": "staticwebassets\\Fullcalendar\\lib\\main.min.js"
-    },
-    {
       "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Layout\\.babelrc.js",
       "PackagePath": "staticwebassets\\Layout\\.babelrc.js"
     },
@@ -1555,6 +1219,10 @@
     {
       "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Layout\\dist\\img\\default-150x150.png",
       "PackagePath": "staticwebassets\\Layout\\dist\\img\\default-150x150.png"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Layout\\dist\\img\\fondochekout.jpg",
+      "PackagePath": "staticwebassets\\Layout\\dist\\img\\fondochekout.jpg"
     },
     {
       "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\Layout\\dist\\img\\fondocs.jpg",
@@ -10119,6 +9787,158 @@
     {
       "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\LICENSE.md",
+      "PackagePath": "staticwebassets\\fullcalendar\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\README.md",
+      "PackagePath": "staticwebassets\\fullcalendar\\README.md"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\dist\\index.global.js",
+      "PackagePath": "staticwebassets\\fullcalendar\\dist\\index.global.js"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\dist\\index.global.min.js",
+      "PackagePath": "staticwebassets\\fullcalendar\\dist\\index.global.min.js"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\examples\\resource-add-remove.html",
+      "PackagePath": "staticwebassets\\fullcalendar\\examples\\resource-add-remove.html"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\examples\\resource-grouping.html",
+      "PackagePath": "staticwebassets\\fullcalendar\\examples\\resource-grouping.html"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\examples\\resource-ordering.html",
+      "PackagePath": "staticwebassets\\fullcalendar\\examples\\resource-ordering.html"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\examples\\timegrid-sticky-header.html",
+      "PackagePath": "staticwebassets\\fullcalendar\\examples\\timegrid-sticky-header.html"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\examples\\timegrid-views-hscroll.html",
+      "PackagePath": "staticwebassets\\fullcalendar\\examples\\timegrid-views-hscroll.html"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\examples\\timeline-background-events.html",
+      "PackagePath": "staticwebassets\\fullcalendar\\examples\\timeline-background-events.html"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\examples\\timeline-column-grouping.html",
+      "PackagePath": "staticwebassets\\fullcalendar\\examples\\timeline-column-grouping.html"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\examples\\timeline-columns.html",
+      "PackagePath": "staticwebassets\\fullcalendar\\examples\\timeline-columns.html"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\examples\\timeline-external-dragging.html",
+      "PackagePath": "staticwebassets\\fullcalendar\\examples\\timeline-external-dragging.html"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\examples\\timeline-full-height.html",
+      "PackagePath": "staticwebassets\\fullcalendar\\examples\\timeline-full-height.html"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\examples\\timeline-no-interaction.html",
+      "PackagePath": "staticwebassets\\fullcalendar\\examples\\timeline-no-interaction.html"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\examples\\timeline-no-overlap.html",
+      "PackagePath": "staticwebassets\\fullcalendar\\examples\\timeline-no-overlap.html"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\examples\\timeline-no-resources.html",
+      "PackagePath": "staticwebassets\\fullcalendar\\examples\\timeline-no-resources.html"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\examples\\timeline-scale.html",
+      "PackagePath": "staticwebassets\\fullcalendar\\examples\\timeline-scale.html"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\examples\\timeline-selectable.html",
+      "PackagePath": "staticwebassets\\fullcalendar\\examples\\timeline-selectable.html"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\examples\\timeline-sticky-header.html",
+      "PackagePath": "staticwebassets\\fullcalendar\\examples\\timeline-sticky-header.html"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\examples\\timeline.html",
+      "PackagePath": "staticwebassets\\fullcalendar\\examples\\timeline.html"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\examples\\week-numbers.html",
+      "PackagePath": "staticwebassets\\fullcalendar\\examples\\week-numbers.html"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\packages\\adaptive\\index.global.js",
+      "PackagePath": "staticwebassets\\fullcalendar\\packages\\adaptive\\index.global.js"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\packages\\adaptive\\index.global.min.js",
+      "PackagePath": "staticwebassets\\fullcalendar\\packages\\adaptive\\index.global.min.js"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\packages\\premium-common\\index.global.js",
+      "PackagePath": "staticwebassets\\fullcalendar\\packages\\premium-common\\index.global.js"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\packages\\premium-common\\index.global.min.js",
+      "PackagePath": "staticwebassets\\fullcalendar\\packages\\premium-common\\index.global.min.js"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\packages\\resource-daygrid\\index.global.js",
+      "PackagePath": "staticwebassets\\fullcalendar\\packages\\resource-daygrid\\index.global.js"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\packages\\resource-daygrid\\index.global.min.js",
+      "PackagePath": "staticwebassets\\fullcalendar\\packages\\resource-daygrid\\index.global.min.js"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\packages\\resource-timegrid\\index.global.js",
+      "PackagePath": "staticwebassets\\fullcalendar\\packages\\resource-timegrid\\index.global.js"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\packages\\resource-timegrid\\index.global.min.js",
+      "PackagePath": "staticwebassets\\fullcalendar\\packages\\resource-timegrid\\index.global.min.js"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\packages\\resource-timeline\\index.global.js",
+      "PackagePath": "staticwebassets\\fullcalendar\\packages\\resource-timeline\\index.global.js"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\packages\\resource-timeline\\index.global.min.js",
+      "PackagePath": "staticwebassets\\fullcalendar\\packages\\resource-timeline\\index.global.min.js"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\packages\\resource\\index.global.js",
+      "PackagePath": "staticwebassets\\fullcalendar\\packages\\resource\\index.global.js"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\packages\\resource\\index.global.min.js",
+      "PackagePath": "staticwebassets\\fullcalendar\\packages\\resource\\index.global.min.js"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\packages\\scrollgrid\\index.global.js",
+      "PackagePath": "staticwebassets\\fullcalendar\\packages\\scrollgrid\\index.global.js"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\packages\\scrollgrid\\index.global.min.js",
+      "PackagePath": "staticwebassets\\fullcalendar\\packages\\scrollgrid\\index.global.min.js"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\packages\\timeline\\index.global.js",
+      "PackagePath": "staticwebassets\\fullcalendar\\packages\\timeline\\index.global.js"
+    },
+    {
+      "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\fullcalendar\\packages\\timeline\\index.global.min.js",
+      "PackagePath": "staticwebassets\\fullcalendar\\packages\\timeline\\index.global.min.js"
     },
     {
       "Id": "D:\\Proyectos Personales\\ApkDeportivo\\Deportivo\\Deportivo.Web\\wwwroot\\js\\site.js",

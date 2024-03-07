@@ -19,7 +19,6 @@ namespace Deportivo.Web.Data.DataSql
 			return builder.Build();
 		}
 
-
 		/// <summary>
 		/// 
 		/// </summary>

@@ -7,8 +7,6 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
-
 builder.Services.AddDbContext<DataContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
@@ -17,15 +15,15 @@ builder.Services.AddDbContext<DataContext>(options =>
 builder.Services.AddIdentity<User, IdentityRole>(cfg =>
 {
     cfg.User.RequireUniqueEmail = true;
-    cfg.Password.RequireDigit = true;
+    cfg.Password.RequireDigit = false;
     cfg.Password.RequiredUniqueChars = 0;
-    cfg.Password.RequireLowercase = true;
-    cfg.Password.RequireUppercase = true;
-    cfg.Password.RequireNonAlphanumeric = true;
+    cfg.Password.RequireLowercase = false;
+    cfg.Password.RequireUppercase = false;
+    cfg.Password.RequireNonAlphanumeric = false;
 }).AddEntityFrameworkStores<DataContext>();
 
 
-builder.Services.AddTransient<SeedDb>();
+//builder.Services.AddTransient<SeedDb>();
 builder.Services.AddScoped<IAccesorios, AccesoriosService>();
 builder.Services.AddScoped<IAdicionales, AdicionalesService>();
 builder.Services.AddScoped<ICliente, ClienteService>();
@@ -49,7 +47,15 @@ builder.Services.AddControllersWithViews()
     });
 
 var app = builder.Build();
+// Obtiene una instancia de SeedDb
+//using (var scope = app.Services.CreateScope())
+//{
+//    var services = scope.ServiceProvider;
+//    var seedDb = services.GetRequiredService<SeedDb>();
 
+//    // Ejecuta el método SeedAsync para sembrar la base de datos
+//    await seedDb.SeedAsync();
+//}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsProduction())

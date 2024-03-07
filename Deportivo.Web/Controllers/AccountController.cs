@@ -23,7 +23,8 @@ namespace Deportivo.Web.Controllers
         }
         public IActionResult Login()
         {
-            if (User.Identity.IsAuthenticated)
+
+            if (User.Identity != null && User.Identity.IsAuthenticated)
             {
                 return RedirectToAction("Index", "Home");
             }
@@ -38,13 +39,18 @@ namespace Deportivo.Web.Controllers
             if (ModelState.IsValid)
             {
 
-                // var result = await _users.LoginAsync(model);
-                //if (result.Succeeded)
-                if (model.Password == "123456")
+                var result = await _users.LoginAsync(model);
+               
+                if (result.Succeeded)
                 {
                     if (Request.Query.Keys.Contains("ReturnUrl"))
                     {
-                        return Redirect(Request.Query["ReturnUrl"].First());
+                        var returnUrl = Request.Query["ReturnUrl"].First();
+                        if (!string.IsNullOrEmpty(returnUrl))
+                        {
+                            return Redirect(returnUrl);
+                        }
+                        
                     }
 
                     return RedirectToAction("Index", "Home");

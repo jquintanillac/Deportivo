@@ -54,11 +54,20 @@ namespace Deportivo.Web.Services
 
         public async Task<SignInResult> LoginAsync(LoginViewModel model)
         {
-            return await _singInManager.PasswordSignInAsync(
+			try
+			{
+                return await _singInManager.PasswordSignInAsync(
                 model.Username,
                 model.Password,
                 model.RememberMe,
                 false);
+            }
+			catch (Exception ex)
+			{
+
+				throw ex;
+			}
+            
         }
 
         public async Task LogoutAsync()

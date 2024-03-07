@@ -20,8 +20,8 @@ namespace Deportivo.Web.Data
 		{
             await _context.Database.EnsureCreatedAsync();
 			await checkRolesAsync();
-			await CheckUserAsync("1010", "Juan", "Quintanilla", "juanqcalderon@gmail.com", "995512267", "Urb. buena vista A-26", UserType.Admin);
-            await CheckUserAsync("2020", "Andres", "Calderon", "andresqcalderon@gmail.com", "995512267", "Urb. buena vista A-26", UserType.User);
+			await CheckUserAsync("1010", "Juan", "Quintanilla", "juanqcalderon@gmail.com", "987474025", "Urb. El remanzao B-3", UserType.Admin);
+            await CheckUserAsync("2020", "Andres", "Calderon", "andresqcalderon@gmail.com", "987474025", "Urb. buena vista A-26", UserType.User);
             
         }
 

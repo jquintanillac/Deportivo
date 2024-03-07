@@ -10,6 +10,8 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Deportivo.Web
 build_property.RootNamespace = Deportivo.Web
 build_property.ProjectDir = D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
@@ -74,6 +76,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Proyectos Personales/ApkDeportivo/Deportivo/Deportivo.Web/Views/PagoCabeceras/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb0NhYmVjZXJhc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Proyectos Personales/ApkDeportivo/Deportivo/Deportivo.Web/Views/PagoCabeceras/tarjeta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb0NhYmVjZXJhc1x0YXJqZXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Proyectos Personales/ApkDeportivo/Deportivo/Deportivo.Web/Views/PagoDetalles/Index.cshtml]

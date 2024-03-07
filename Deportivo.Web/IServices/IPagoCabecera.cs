@@ -9,5 +9,7 @@ namespace Deportivo.Web.IServices
     {
         Task<List<GetPago>> Getpago();
 		string Delete(int id_pagcab);
+
+
     }
 }

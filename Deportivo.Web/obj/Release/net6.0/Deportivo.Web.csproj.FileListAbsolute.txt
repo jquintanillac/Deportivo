@@ -272,3 +272,12 @@ D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\bin\Release\net6.0\
 D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\bin\Release\net6.0\zh-Hant\Humanizer.resources.dll
 D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\bin\Release\net6.0\Deportivo.Common.dll
 D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\bin\Release\net6.0\Deportivo.Common.pdb
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\bin\Release\net6.0\libman.json
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\bin\Release\net6.0\System.Web.Mvc.dll
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\bin\Release\net6.0\System.Web.Razor.dll
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\bin\Release\net6.0\System.Web.Helpers.dll
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\bin\Release\net6.0\System.Web.WebPages.Deployment.dll
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\bin\Release\net6.0\System.Web.WebPages.Razor.dll
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\bin\Release\net6.0\System.Web.WebPages.dll
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\bin\Release\net6.0\Microsoft.Web.Infrastructure.dll
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\obj\Release\net6.0\Deportivo.Web.sourcelink.json

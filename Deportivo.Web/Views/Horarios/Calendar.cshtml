@@ -1,34 +1,183 @@
 ﻿@{
     ViewData["Title"] = "Calendario";
+    Layout = null;
 }
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset='utf-8' />
-    <link href='~/Fullcalendar/lib/main.css' rel='stylesheet' />
-    <script src='~/Fullcalendar/lib/main.js'></script>
-    <script src='~/Fullcalendar/lib/locales/es.js'></script>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/Layout/plugins/fontawesome-free/css/all.min.css">
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="~/Layout/plugins/daterangepicker/daterangepicker.css">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="~/Layout/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Bootstrap Color Picker -->
+    <link rel="stylesheet" href="~/Layout/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="~/Layout/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="~/Layout/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="~/Layout/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <!-- Bootstrap4 Duallistbox -->
+    <link rel="stylesheet" href="~/Layout/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
+    <!-- BS Stepper -->
+    <link rel="stylesheet" href="~/Layout/plugins/bs-stepper/css/bs-stepper.min.css">
+    <!-- dropzonejs -->
+    <link rel="stylesheet" href="~/Layout/plugins/dropzone/min/dropzone.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Layout/dist/css/adminlte.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <!--Full Calendar-->
+    <script src="~/fullcalendar/dist/index.global.js"></script>
+    <script src="~/fullcalendar/dist/index.global.min.js"></script>
 
-    <script>
+    <script type="text/javascript">
+
+
+
         //var origin = window.location.hostname;
         //var url = origin + '/MDMenus/Fulleventos'
         var url = '/api/ACalendar';
         document.addEventListener('DOMContentLoaded', function() {
-          var calendarEl = document.getElementById('calendar');
-
-          var calendar = new FullCalendar.Calendar(calendarEl, {
-            locale: 'es',
-            headerToolbar: {
-              left: 'prev,next today',
-              center: 'title',
-              right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-            },
-            //events: '@Url.RouteUrl(new{ action="Fulleventos", controller="MDMenus"})'
-            events: url
-          });
+            var calendarEl = document.getElementById('calendar');
+            var today = new Date();   
+            var now = today.toLocaleDateString('fr-CA');
+            console.log(now);
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                locale: 'es',
+                headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+                },               
+                editable: true,
+                // eventLimit: true,
+                //events: '@Url.RouteUrl(new{ action="Fulleventos", controller="MDMenus"})
+                events: url,
+                dateClick: function (info) {
+                    $('#fecha').val(info.dateStr);
+                    //alert('Clicked on: ' + info.dateStr);
+                    //alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
+                    //alert('Current view: ' + info.view.type);
+                    // change the day's background color just for fun
+                   // info.dayEl.style.backgroundColor = 'red';
+                    $('#exampleModal').modal('show');
+                },
+                eventColor: 'green',
+                validRange: {
+                    start: now
+                }
+            });
           calendar.render();
+           
+            $('#clsmodal').on('click', function () {
+                $('#exampleModal').modal('hide');               
+            });
+
+            $('#btnsavemdl').on('click', function () {
+               // swal('Mensaje de advertencia', 'Complete los campos requeridos', 'error');
+                var fecha = $('#fecha').val();
+                var horaini = $('#horainit').val();
+                var horafin = $('#horafint').val();
+                debugger
+                if (horaini === '' || horafin === '') {
+                    swal('Mensaje de confirmacion', 'Llene los campos de hora', 'error');
+                }
+                else{ 
+                    var mFechas = {
+                        fechas: fecha.toString(),
+                        horainis: horaini.toString(),
+                        horafins: horafin.toString()
+                    };
+                    // var url2 = $(location).attr('hostname');
+                    jQuery.ajax({
+                        url: '@Url.Action("GrabarHorario", "PagoCabeceras")',
+                        type: "POST",
+                        data: { mFechas: mFechas },
+                        dataType: "json",  // Corrección en el atributo "dataType"
+                        //async: true,
+                        success: function (data) {
+                            debugger
+                            if (data.respuesta == "Ok") {
+                                var fechas = data.fechas;
+                                var horainis = data.horainis;
+                                var horafins = data.horafins;
+                                var canchaSeleccionada = $('#canchasSelect').val();
+                                var url = '/PagoCabeceras/tarjeta' +
+                                    '?fechas=' + encodeURIComponent(fechas) +
+                                    '&horainis=' + encodeURIComponent(horainis) +
+                                    '&horafins=' + encodeURIComponent(horafins) +
+                                    '&cancha=' + encodeURIComponent(canchaSeleccionada);
+                                window.open(url, '_blank');
+                                $('#exampleModal').modal('hide');                               
+                            } else {
+                                swal('Mensaje de confirmación', 'Los datos necesarios no están disponibles', 'error');
+                            }
+                        },
+                        error: function (data) {
+                            swal('Mensaje de confirmación', 'Error en la solicitud', 'error');
+                        }
+                    });
+                    
+
+                }               
+            });
+
+            $("#btnvalidar").click(function () {
+                // Llama a la función para cargar las canchas
+                var canchasLpm = $("#canchasSelect");
+                canchasLpm.empty();
+                cargarCanchas();
+            });
+
+            function cargarCanchas() {
+                // Obtiene la fecha final
+                var fecha = $('#fecha').val();
+                var horaini = $('#horainit').val();
+                var horafin = $('#horafint').val();
+                // Realiza la solicitud AJAX al controlador
+                
+                if (horafin > horaini) {
+                    var mFechas = {
+                        fechas: fecha.toString(),
+                        horainis: horaini.toString(),
+                        horafins: horafin.toString()
+                    };
+
+                    $.ajax({
+                        url: '@Url.Action("cargarCanchas", "PagoCabeceras")', // Reemplaza por la URL de tu controlador y acción
+                        type: 'POST', // Puede ser GET o POST según tu configuración
+                        data: { mFechas: mFechas },
+                        dataType: 'json',
+                        success: function (data) {
+                            // Llena el select con los datos recibidos del controlador
+                            var canchasSelect = $("#canchasSelect");
+                            canchasSelect.empty();
+                            canchasSelect.append($("<option value=''>Selecciona una cancha</option>"));
+
+                            // Accede a la lista de canchas desde la propiedad "canchas" en la respuesta JSON
+                            var canchas = data.canchas;
+
+                            $.each(canchas, function (i, cancha) {
+                                canchasSelect.append($("<option value='" + cancha.id_espdep + "'>" + cancha.espdep_desc + "</option>"));
+                            });
+                        },
+                        error: function () {
+                            swal('Mensaje de confirmación', 'Horarios no disponibles', 'error');
+                        }
+                    });
+                }
+                else{
+                    swal('Mensaje de confirmación', 'La hora final debe ser mayor a la hora inicio', 'error');
+                }               
+            }
         });
 
+       
     </script>
     <style>
 
@@ -63,5 +212,138 @@
             </div>
         </div>
     </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header mdlTitulo">
+                    <h5 class="text-lg-center">ELEGIR HORARIO</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Fecha:</label>
+                        <input type="text" id="fecha" class="form-control" readonly/>
+                    </div>
+                    
+                    <!-- tiempo a elegir -->
+                    <div class="row">  
+                        <div class="col">
+                            <!-- time Picker inicial-->
+                            <div class="bootstrap-timepicker">
+                                <div class="form-group">
+                                    <label>Hora Inicio:</label>
+                                    <div class="input-group date" id="horaini" data-target-input="nearest">
+                                        <input type="text" id="horainit" class="form-control datetimepicker-input" data-target="#horaini" />
+                                        <div class="input-group-append" data-target="#horaini" data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="far fa-clock"></i></div>
+                                        </div>
+                                    </div>
+                                    <!-- /.input group -->
+                                </div>
+                                <!-- /.form group -->
+                            </div>
+                        </div>
+                       
+                        <div class="col">
+                            <!-- time Picker final-->
+                            <div class="bootstrap-timepicker">
+                                <div class="form-group">
+                                    <label>Hora Fin:</label>
+                                    <div class="input-group date" id="horafin" data-target-input="nearest">
+                                        <input type="text" id="horafint" class="form-control datetimepicker-input" data-target="#horafin" />
+                                        <div class="input-group-append" data-target="#horafin" data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="far fa-clock"></i></div>
+                                        </div>
+                                    </div>
+                                    <!-- /.input group -->
+                                </div>
+                                <!-- /.form group -->
+                            </div>
+                        </div>                      
+                    </div>
+                    <div class="row">
+                        <button type="button" id="btnvalidar" class="btn btn-primary">Validar</button>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="form-group">
+                            <label>Canchas Disponibles:</label>
+                            <select id="canchasSelect" class="form-control">
+                                <option value="">Selecciona una cancha</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="clsmodal" class="btn btn-secondary cerrar" data-dismiss="modal">Cerrar</button>
+                    <button type="button" id="btnsavemdl" class="btn btn-primary">Grabar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="~/Layout/plugins/jquery/jquery.min.js"></script>    
+
+    <!-- Bootstrap 4 -->
+    <script src="~/Layout/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Select2 -->
+    <script src="~/Layout/plugins/select2/js/select2.full.min.js"></script>
+    <!-- Bootstrap4 Duallistbox -->
+    <script src="~/Layout/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+    <!-- InputMask -->
+    <script src="~/Layout/plugins/moment/moment.min.js"></script>
+    <script src="~/Layout/plugins/inputmask/jquery.inputmask.min.js"></script>
+    <!-- date-range-picker -->
+    <script src="~/Layout/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- bootstrap color picker -->
+    <script src="~/Layout/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="~/Layout/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Bootstrap Switch -->
+    <script src="~/Layout/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+    <!-- BS-Stepper -->
+    <script src="~/Layout/plugins/bs-stepper/js/bs-stepper.min.js"></script>
+    <!-- dropzonejs -->
+    <script src="~/Layout/plugins/dropzone/min/dropzone.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/Layout/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/Layout/dist/js/demo.js"></script>
+    <script>
+        $(function () {
+
+            //Timepicker inicio
+            $('#horaini').datetimepicker({
+                minTime: '08:00',
+                maxTime: '23:00',
+                pickDate: false,
+                pickTime: true,
+                useSeconds: false,
+                format: 'hh:mm',
+                stepping: 30
+            })
+
+            //Timepicker final
+            $('#horafin').datetimepicker({
+                minTime: '08:00',
+                maxTime: '23:00',
+                pickDate: false,
+                pickTime: true,
+                useSeconds: false,
+                format: 'hh:mm',
+                stepping: 30
+            })
+
+        })
+
+    </script>
 </body>
+
 </html>
+
+
