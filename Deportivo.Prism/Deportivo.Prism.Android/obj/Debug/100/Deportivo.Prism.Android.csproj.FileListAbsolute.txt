@@ -1,0 +1,6 @@
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Prism\Deportivo.Prism.Android\obj\Debug\100\MonoAndroid,Version=v10.0.AssemblyAttributes.cs
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Prism\Deportivo.Prism.Android\obj\Debug\100\build.props
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Prism\Deportivo.Prism.Android\obj\Debug\100\adb.props
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Prism\Deportivo.Prism.Android\obj\Debug\100\Deportivo.Prism.Android.csproj.AssemblyReference.cache
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Prism\Deportivo.Prism.Android\obj\Debug\100\stamp\_BuildLibraryImportsCache.stamp
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Prism\Deportivo.Prism.Android\obj\Debug\100\res.flag

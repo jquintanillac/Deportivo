@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Deportivo.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+33f84eae7744af71d9e876c7a4127084de9e5af7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bbf24e5ed02c72dd64d5c790922f174f13f1ce9e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Deportivo.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Deportivo.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

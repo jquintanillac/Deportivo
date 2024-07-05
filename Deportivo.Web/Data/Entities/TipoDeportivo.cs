@@ -8,7 +8,7 @@ namespace Deportivo.Web.Data.Entities
     {
         [Key]
         public int id_tipdep { get; set; }
-        public string? tipdep_desc { get; set; }
+        public string tipdep_desc { get; set; }
         public bool tipdep_act { get; set; }       
     }
 }

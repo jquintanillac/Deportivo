@@ -1,3 +1,4 @@
+using Deportivo.Common.Services;
 using Deportivo.Prism.ViewModels;
 using Deportivo.Prism.Views;
 using Prism;
@@ -19,15 +20,28 @@ namespace Deportivo.Prism
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("NavigationPage/HorarioPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
-
+            containerRegistry.Register<IApiService, ApiService>();
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<AccesoriosPage, AccesoriosPageViewModel>();
+            containerRegistry.RegisterForNavigation<AdicionalesPage, AdicionalesPageViewModel>();
+            containerRegistry.RegisterForNavigation<ClientePage, ClientePageViewModel>();
+            containerRegistry.RegisterForNavigation<DeportivoAccesorioPage, DeportivoAccesorioPageViewModel>();
+            containerRegistry.RegisterForNavigation<EgresosPage, EgresosPageViewModel>();
+            containerRegistry.RegisterForNavigation<EspaciosDeportivoPage, EspaciosDeportivoPageViewModel>();
+            containerRegistry.RegisterForNavigation<EventosPage, EventosPageViewModel>();
+            containerRegistry.RegisterForNavigation<HorarioPage, HorarioPageViewModel>();
+            containerRegistry.RegisterForNavigation<InicialPage, InicialPageViewModel>();
+            containerRegistry.RegisterForNavigation<NumeracionPage, NumeracionPageViewModel>();
+            containerRegistry.RegisterForNavigation<PagoCabeceraPage, PagoCabeceraPageViewModel>();
+            containerRegistry.RegisterForNavigation<PagoDetallePage, PagoDetallePageViewModel>();
+            containerRegistry.RegisterForNavigation<TipoDeportivoPage, TipoDeportivoPageViewModel>();
+            containerRegistry.RegisterForNavigation<TipoDocumentoPage, TipoDocumentoPageViewModel>();
         }
     }
 }

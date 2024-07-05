@@ -275,9 +275,14 @@ D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\obj\Debug\net6.0\st
 D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\obj\Debug\net6.0\scopedcss\bundle\Deportivo.Web.styles.css
 D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\obj\Debug\net6.0\scopedcss\projectbundle\Deportivo.Web.bundle.scp.css
-D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\obj\Debug\net6.0\Deportivo.Web.csproj.CopyComplete
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\obj\Debug\net6.0\Deportiv.35EF771B.Up2Date
 D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\obj\Debug\net6.0\Deportivo.Web.dll
 D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\obj\Debug\net6.0\refint\Deportivo.Web.dll
 D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\obj\Debug\net6.0\Deportivo.Web.pdb
 D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\obj\Debug\net6.0\Deportivo.Web.genruntimeconfig.cache
 D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\obj\Debug\net6.0\ref\Deportivo.Web.dll
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Web\obj\Debug\net6.0\Deportivo.Web.MvcApplicationPartsAssemblyInfo.cs

@@ -23,7 +23,7 @@ namespace Deportivo.Web.APIs
             return await _horarios.GetHorario();
         }
 
-   
+
         // POST api/<AHorariosController>
         [HttpPost]
         public string Post([FromForm] Horario oHorario)

@@ -121,8 +121,6 @@ namespace Deportivo.Web.Controllers
 
 				throw ex;
 			}
-
-
 		}
 
 		[HttpPost]

@@ -1,0 +1,11 @@
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Common\bin\Release\netstandard2.0\Deportivo.Common.deps.json
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Common\bin\Release\netstandard2.0\Deportivo.Common.dll
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Common\bin\Release\netstandard2.0\Deportivo.Common.pdb
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Common\obj\Release\netstandard2.0\Deportivo.Common.csproj.AssemblyReference.cache
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Common\obj\Release\netstandard2.0\Deportivo.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Common\obj\Release\netstandard2.0\Deportivo.Common.AssemblyInfoInputs.cache
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Common\obj\Release\netstandard2.0\Deportivo.Common.AssemblyInfo.cs
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Common\obj\Release\netstandard2.0\Deportivo.Common.csproj.CoreCompileInputs.cache
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Common\obj\Release\netstandard2.0\Deportivo.Common.sourcelink.json
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Common\obj\Release\netstandard2.0\Deportivo.Common.dll
+D:\Proyectos Personales\ApkDeportivo\Deportivo\Deportivo.Common\obj\Release\netstandard2.0\Deportivo.Common.pdb
